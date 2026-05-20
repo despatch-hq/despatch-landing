@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Despatch — GCC Tender Intelligence. 2,500+ government tenders delivered to your inbox every morning across Bahrain, Oman, Kuwait, UAE, and Saudi Arabia.">
+<title>Despatch — GCC Tender Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black:#080808;--dark:#0f0f0f;--surface:#161616;--border:#1f1f1f;--border2:#2a2a2a;
+    --muted:#3a3a3a;--dim:#555555;--mid:#777777;--sub:#999999;--text:#e8e8e8;--white:#f5f5f5;
+    --red:#e74c3c;--amber:#e67e22;--green:#27ae60;
+    --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,8,8,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+  .logo{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--white);}
+  .nav-cta{font-family:var(--sans);font-size:13px;color:var(--sub);text-decoration:none;border:1px solid var(--border2);padding:8px 20px;border-radius:4px;transition:all 0.2s;}
+  .nav-cta:hover{border-color:var(--muted);color:var(--text);}
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(231,76,60,0.04) 0%,transparent 70%);pointer-events:none;}
+  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+  .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--muted);}
+  h1{font-family:var(--sans);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--white);max-width:700px;margin-bottom:32px;}
+  h1 em{font-style:normal;color:var(--sub);}
+  .hero-sub{font-size:16px;color:var(--mid);line-height:1.7;max-width:480px;margin-bottom:48px;font-weight:300;}
+  .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  .btn-primary{display:inline-block;background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;font-weight:500;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
+  .btn-primary:hover{background:#fff;transform:translateY(-1px);}
+  .btn-note{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:0.5px;}
+  .ticker-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0;background:var(--dark);}
+  .ticker{display:flex;animation:ticker 32s linear infinite;white-space:nowrap;}
+  .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 40px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;border-right:1px solid var(--border);}
+  .ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--muted);}
+  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);}
+  .stat{padding:48px 40px;border-right:1px solid var(--border);}
+  .stat:last-child{border-right:none;}
+  .stat-num{font-family:var(--mono);font-size:36px;font-weight:400;color:var(--white);margin-bottom:8px;letter-spacing:-1px;}
+  .stat-label{font-size:12px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;font-family:var(--mono);}
+  .section{padding:80px 48px;border-bottom:1px solid var(--border);}
+  .section-label{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:40px;display:flex;align-items:center;gap:12px;}
+  .section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+  .countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+  .country-card{background:var(--dark);padding:36px 24px;text-align:center;transition:background 0.2s;}
+  .country-card:hover{background:var(--surface);}
+  .country-card.coming{opacity:0.35;}
+  .flag{font-size:28px;margin-bottom:12px;display:block;}
+  .country-name{font-size:11px;color:var(--mid);margin-bottom:12px;letter-spacing:0.5px;}
+  .country-count{font-family:var(--mono);font-size:24px;color:var(--white);font-weight:400;}
+  .qatar-bar{background:var(--dark);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;display:flex;align-items:center;gap:16px;padding:18px 28px;opacity:0.35;}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+  .how-card{background:var(--dark);padding:40px 36px;}
+  .how-num{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:2px;margin-bottom:20px;}
+  .how-title{font-size:17px;font-weight:500;color:var(--white);margin-bottom:12px;letter-spacing:-0.3px;}
+  .how-desc{font-size:14px;color:var(--mid);line-height:1.7;font-weight:300;}
+  .digest-preview{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+  .digest-header{background:var(--black);padding:28px 32px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;}
+  .digest-logo{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
+  .digest-title{font-size:20px;font-weight:400;color:var(--white);}
+  .digest-date{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:4px;}
+  .digest-total{text-align:right;}
+  .digest-total-label{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
+  .digest-total-num{font-family:var(--mono);font-size:36px;color:var(--white);font-weight:400;}
+  .digest-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px 32px;background:var(--black);border-bottom:1px solid var(--border);}
+  .dstat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 10px;text-align:center;}
+  .dstat-num{font-family:var(--mono);font-size:20px;font-weight:400;margin-bottom:4px;}
+  .dstat-label{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;}
+  .dstat.new .dstat-num{color:var(--green);}
+  .dstat.critical .dstat-num{color:var(--red);}
+  .dstat.urgent .dstat-num{color:var(--amber);}
+  .dstat.normal .dstat-num{color:var(--sub);}
+  .digest-cards{padding:20px 32px 32px;}
+  .digest-section-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:12px;margin-top:20px;}
+  .digest-card{background:var(--dark);border:1px solid var(--border2);border-left:3px solid var(--muted);border-radius:6px;padding:16px;margin-bottom:8px;display:flex;flex-direction:column;gap:6px;}
+  .digest-card.urgent-card{border-left-color:var(--amber);}
+  .digest-card.critical-card{border-left-color:var(--red);}
+  .digest-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
+  .digest-card-ref{font-family:var(--mono);font-size:10px;color:var(--dim);}
+  .digest-card-country{font-size:11px;color:var(--sub);}
+  .digest-card-title{font-size:13px;font-weight:500;color:var(--white);line-height:1.4;}
+  .digest-card-auth{font-size:11px;color:var(--mid);}
+  .digest-card-closes{font-size:11px;color:var(--amber);font-weight:500;}
+  .digest-card-closes.critical{color:var(--red);}
+  .digest-card-btn{display:inline-block;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-size:11px;font-weight:500;padding:6px 14px;border-radius:4px;margin-top:4px;width:fit-content;}
+  .early-access{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:56px 48px;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;}
+  .ea-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(230,126,34,0.3);padding:4px 12px;border-radius:3px;margin-bottom:16px;}
+  .ea-title{font-size:28px;font-weight:300;color:var(--white);letter-spacing:-0.5px;margin-bottom:12px;}
+  .ea-desc{font-size:14px;color:var(--mid);line-height:1.7;max-width:480px;font-weight:300;}
+  .ea-action{text-align:right;flex-shrink:0;}
+  .ea-action .btn-primary{display:block;margin-bottom:10px;}
+  .ea-note{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.5px;}
+  footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-logo{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
+  .footer-links{display:flex;gap:24px;}
+  .footer-links a{font-size:12px;color:var(--dim);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--sub);}
+  .footer-copy{font-family:var(--mono);font-size:11px;color:var(--muted);}
+  .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){
+    nav{padding:16px 24px;}
+    .hero{padding:100px 24px 60px;}
+    h1{font-size:38px;}
+    .stats{grid-template-columns:repeat(2,1fr);}
+    .stat{border-bottom:1px solid var(--border);}
+    .countries-grid{grid-template-columns:repeat(3,1fr);}
+    .how-grid{grid-template-columns:1fr;}
+    .section{padding:60px 24px;}
+    .early-access{padding:40px 28px;flex-direction:column;}
+    .ea-action{text-align:left;width:100%;}
+    .digest-stats{grid-template-columns:repeat(2,1fr);}
+    .digest-header{flex-direction:column;gap:12px;}
+    .digest-total{text-align:left;}
+    footer{padding:24px;flex-direction:column;align-items:flex-start;}
+  }
+  @media(max-width:600px){
+    .countries-grid{grid-template-columns:repeat(2,1fr);}
+    .stats{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Despatch</div>
+  <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="nav-cta">Start free trial</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-eyebrow">GCC Tender Intelligence</div>
+  <h1>Every government<br>tender. <em>Every morning.</em></h1>
+  <p class="hero-sub">Despatch monitors Bahrain, Oman, Kuwait, UAE, and Saudi Arabia's procurement portals daily — delivering 2,500+ active tenders to your inbox before your workday starts.</p>
+  <div class="hero-actions">
+    <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="btn-primary">Start free trial</a>
+    <span class="btn-note">14 days free · no card required</span>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item"><span class="ticker-dot"></span>Bahrain Tender Board</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Oman eTendering</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Kuwait CAPT</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Abu Dhabi ADGPG</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>UAE Federal MOF</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Saudi Etimad</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>2,500+ Active Tenders</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>17 Sectors Tracked</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Daily Delivery</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Bahrain Tender Board</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Oman eTendering</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Kuwait CAPT</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Abu Dhabi ADGPG</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>UAE Federal MOF</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Saudi Etimad</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>2,500+ Active Tenders</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>17 Sectors Tracked</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Daily Delivery</span>
+  </div>
+</div>
+
+<div class="stats fade-up">
+  <div class="stat"><div class="stat-num">2,500+</div><div class="stat-label">Daily tenders</div></div>
+  <div class="stat"><div class="stat-num">5</div><div class="stat-label">GCC countries</div></div>
+  <div class="stat"><div class="stat-num">17</div><div class="stat-label">Sectors tracked</div></div>
+  <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Delivery</div></div>
+</div>
+
+<section class="section fade-up">
+  <div class="section-label">Countries covered</div>
+  <div class="countries-grid">
+    <div class="country-card"><span class="flag">🇸🇦</span><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
+    <div class="country-card"><span class="flag">🇴🇲</span><div class="country-name">Oman</div><div class="country-count">754</div></div>
+    <div class="country-card"><span class="flag">🇦🇪</span><div class="country-name">UAE</div><div class="country-count">122</div></div>
+    <div class="country-card"><span class="flag">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">75</div></div>
+    <div class="country-card"><span class="flag">🇰🇼</span><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
+    <div class="country-card coming"><span class="flag">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--dim);font-family:var(--sans);">Coming soon</div></div>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="section-label">How it works</div>
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-num">01</div>
+      <div class="how-title">We monitor the portals</div>
+      <div class="how-desc">Every GCC government procurement portal is monitored daily — Bahrain, Oman, Kuwait, UAE, and Saudi Arabia. New listings, updated deadlines, all captured automatically.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">02</div>
+      <div class="how-title">We build your digest</div>
+      <div class="how-desc">Tenders are filtered, classified by sector, and sorted by urgency. New listings flagged. Critical deadlines highlighted. Everything you need, nothing you don't.</div>
+    </div>
+    <div class="how-card">
+      <div class="how-num">03</div>
+      <div class="how-title">You read it every morning</div>
+      <div class="how-desc">A clean daily email lands in your inbox — new tenders first, urgent deadlines next. No portal-checking. No missed opportunities. Just your morning brief.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="section-label">Sample digest</div>
+  <div class="digest-preview">
+    <div class="digest-header">
+      <div>
+        <div class="digest-logo">Despatch</div>
+        <div class="digest-title">GCC Tender Intelligence</div>
+        <div class="digest-date">20 May, 2026</div>
+      </div>
+      <div class="digest-total">
+        <div class="digest-total-label">Total</div>
+        <div class="digest-total-num">2,544</div>
+      </div>
+    </div>
+    <div class="digest-stats">
+      <div class="dstat new"><div class="dstat-num">14</div><div class="dstat-label">New</div></div>
+      <div class="dstat critical"><div class="dstat-num">97</div><div class="dstat-label">Critical</div></div>
+      <div class="dstat urgent"><div class="dstat-num">985</div><div class="dstat-label">Urgent</div></div>
+      <div class="dstat normal"><div class="dstat-num">1,448</div><div class="dstat-label">Normal</div></div>
+    </div>
+    <div class="digest-cards">
+      <div class="digest-section-label">New Tenders</div>
+      <div class="digest-card critical-card">
+        <div class="digest-card-top">
+          <span class="digest-card-ref">Ref: 260539005042</span>
+          <span class="digest-card-country">🇸🇦 Saudi Arabia</span>
+        </div>
+        <div class="digest-card-title">Supply and installation of fire suppression systems for government complex</div>
+        <div class="digest-card-auth">Ministry of Finance — Procurement Department</div>
+        <div class="digest-card-closes critical">Closes: 22 May, 2026 (in 2 days)</div>
+        <div class="digest-card-btn">View Tender</div>
+      </div>
+      <div class="digest-card urgent-card">
+        <div class="digest-card-top">
+          <span class="digest-card-ref">Ref: 74/2026/EA/HQ-15</span>
+          <span class="digest-card-country">🇴🇲 Oman</span>
+        </div>
+        <div class="digest-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
+        <div class="digest-card-auth">Environment Authority</div>
+        <div class="digest-card-closes">Closes: 26 May, 2026 (in 6 days)</div>
+        <div class="digest-card-btn">View Tender</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-up">
+  <div class="early-access">
+    <div>
+      <div class="ea-tag">First 20 subscribers only</div>
+      <div class="ea-title">Lock in launch pricing</div>
+      <div class="ea-desc">Despatch is in early access. The first 20 subscribers get a permanently reduced rate — start your free trial now to secure it before it's gone. No card required.</div>
+    </div>
+    <div class="ea-action">
+      <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="btn-primary">Start 14-day free trial</a>
+      <div class="ea-note">no card required · cancel anytime</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Despatch</div>
+  <div class="footer-links">
+    <a href="mailto:despatch.hq@gmail.com">Contact</a>
+    <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request">Start trial</a>
+  </div>
+  <div class="footer-copy">© 2026 Despatch</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
