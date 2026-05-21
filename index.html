@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no,email=no,address=no">
 <meta name="description" content="Despatch — GCC Tender Intelligence. 2,500+ government tenders delivered to your inbox every morning across Bahrain, Oman, Kuwait, UAE, and Saudi Arabia.">
 <title>Despatch — GCC Tender Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +25,7 @@
   .nav-cta:hover{border-color:var(--muted);color:var(--text);}
   .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(231,76,60,0.04) 0%,transparent 70%);pointer-events:none;}
-  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
   .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--muted);}
   h1{font-family:var(--sans);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--white);max-width:700px;margin-bottom:32px;}
   h1 em{font-style:normal;color:var(--sub);}
@@ -32,7 +33,7 @@
   .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
   .btn-primary{display:inline-block;background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;font-weight:500;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
   .btn-primary:hover{background:#fff;transform:translateY(-1px);}
-  .btn-note{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:0.5px;}
+  .btn-note{font-family:var(--mono);font-size:11px;color:#888888;letter-spacing:0.5px;}
   .ticker-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0;background:var(--dark);}
   .ticker{display:flex;animation:ticker 32s linear infinite;white-space:nowrap;will-change:transform;backface-visibility:hidden;}
   .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 40px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;border-right:1px solid var(--border);}
@@ -44,7 +45,7 @@
   .stat-num{font-family:var(--mono);font-size:36px;font-weight:400;color:var(--white);margin-bottom:8px;letter-spacing:-1px;}
   .stat-label{font-size:12px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;font-family:var(--mono);}
   .section{padding:80px 48px;border-bottom:1px solid var(--border);}
-  .section-label{font-family:var(--mono);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:40px;}
+  .section-label{font-family:var(--mono);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:40px;}
   .countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
   .country-card{background:var(--dark);padding:36px 24px;text-align:center;transition:background 0.2s;}
   .country-card:hover{background:var(--surface);}
@@ -75,12 +76,12 @@
   .dstat.urgent .dstat-num{color:var(--amber);}
   .dstat.normal .dstat-num{color:var(--sub);}
   .digest-cards{padding:20px 32px 32px;}
-  .digest-section-label{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:12px;margin-top:20px;}
+  .digest-section-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#27ae60;margin-bottom:12px;margin-top:20px;}
   .digest-card{background:var(--dark);border:1px solid var(--border2);border-left:3px solid var(--muted);border-radius:6px;padding:16px;margin-bottom:8px;display:flex;flex-direction:column;gap:6px;}
   .digest-card.urgent-card{border-left-color:var(--amber);}
   .digest-card.critical-card{border-left-color:var(--red);}
   .digest-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
-  .digest-card-ref{font-family:var(--mono);font-size:10px;color:var(--dim);}
+  .digest-card-ref{font-family:var(--mono);font-size:10px;color:var(--dim);-webkit-touch-callout:none;}
   .digest-card-country{font-size:11px;color:var(--sub);}
   .digest-card-title{font-size:13px;font-weight:500;color:var(--white);line-height:1.4;}
   .digest-card-auth{font-size:11px;color:var(--mid);}
@@ -93,7 +94,7 @@
   .ea-desc{font-size:14px;color:var(--mid);line-height:1.7;max-width:480px;font-weight:300;}
   .ea-action{text-align:right;flex-shrink:0;}
   .ea-action .btn-primary{display:block;margin-bottom:10px;}
-  .ea-note{font-family:var(--mono);font-size:10px;color:var(--dim);letter-spacing:0.5px;}
+  .ea-note{font-family:var(--mono);font-size:10px;color:#888888;letter-spacing:0.5px;}
   footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
   .footer-logo{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
   .footer-links{display:flex;gap:24px;}
@@ -128,7 +129,7 @@
 
 <nav>
   <div class="logo">Despatch</div>
-  <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="nav-cta">Start free trial</a>
+  <a href="signup.html" class="nav-cta">Start free trial</a>
 </nav>
 
 <section class="hero">
@@ -136,7 +137,7 @@
   <h1>Every government<br>tender. <em>Every morning.</em></h1>
   <p class="hero-sub">Despatch monitors Bahrain, Oman, Kuwait, UAE, and Saudi Arabia's procurement portals daily — delivering 2,500+ active tenders to your inbox before your workday starts.</p>
   <div class="hero-actions">
-    <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="btn-primary">Start free trial</a>
+    <a href="signup.html" class="btn-primary">Start free trial</a>
     <span class="btn-note">14 days free · no card required</span>
   </div>
 </section>
@@ -218,6 +219,9 @@
       <div class="dstat urgent"><div class="dstat-num">985</div><div class="dstat-label">Urgent</div></div>
       <div class="dstat normal"><div class="dstat-num">1,448</div><div class="dstat-label">Normal</div></div>
     </div>
+    <div style="background:var(--black);padding:12px 32px 16px;text-align:center;border-bottom:1px solid var(--border);">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--dim);"><span style="color:#e74c3c;font-weight:600;">Critical</span> = closes within 3 days &nbsp;·&nbsp; <span style="color:#e67e22;font-weight:600;">Urgent</span> = closes by 27 May, 2026</div>
+    </div>
     <div class="digest-cards">
       <div class="digest-section-label">New Tenders</div>
       <div class="digest-card critical-card">
@@ -252,7 +256,7 @@
       <div class="ea-desc">Despatch is in early access. The first 20 subscribers get a permanently reduced rate — start your free trial now to secure it before it's gone. No card required.</div>
     </div>
     <div class="ea-action">
-      <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request" class="btn-primary">Start 14-day free trial</a>
+      <a href="signup.html" class="btn-primary">Start 14-day free trial</a>
       <div class="ea-note">no card required · cancel anytime</div>
     </div>
   </div>
@@ -262,7 +266,7 @@
   <div class="footer-logo">Despatch</div>
   <div class="footer-links">
     <a href="mailto:despatch.hq@gmail.com">Contact</a>
-    <a href="mailto:despatch.hq@gmail.com?subject=Free Trial Request">Start trial</a>
+    <a href="signup.html">Start trial</a>
   </div>
   <div class="footer-copy">© 2026 Despatch</div>
 </footer>
