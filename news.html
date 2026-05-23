@@ -32,7 +32,7 @@
   .nav-cta:hover{border-color:var(--muted);color:var(--text);}
 
   /* PAGE */
-  .page{padding:120px 48px 80px;max-width:1200px;margin:0 auto;}
+  .page{padding:120px 48px 32px;max-width:1200px;margin:0 auto;}
 
   /* HEADER */
   .page-header{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border);}
@@ -51,7 +51,7 @@
   .news-lead{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
   .news-lead-main{background:var(--dark);padding:40px 36px;}
   .news-lead-meta{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-  .news-tag{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(230,126,34,0.3);padding:3px 10px;border-radius:3px;}
+  .news-tag{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#f39c12;border:1px solid rgba(243,156,18,0.4);padding:3px 10px;border-radius:3px;}
   .news-country{font-size:12px;color:var(--sub);}
   .news-lead-title{font-size:24px;font-weight:400;color:var(--white);line-height:1.35;letter-spacing:-0.3px;margin-bottom:16px;}
   .news-lead-sub{font-size:14px;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:24px;}
@@ -63,7 +63,7 @@
   .news-sidebar-item{padding:14px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;}
   .news-sidebar-item:last-child{border-bottom:none;}
   .news-sidebar-item-top{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
-  .news-tag-sm{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--amber);opacity:0.8;}
+  .news-tag-sm{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#f39c12;}
   .news-sidebar-title{font-size:13px;color:var(--text);line-height:1.4;}
 
   /* NEWS GRID */
@@ -81,7 +81,7 @@
   .analysis-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
   .analysis-card{background:var(--surface);padding:28px 24px;cursor:pointer;transition:background 0.2s;}
   .analysis-card:hover{background:var(--dark);}
-  .analysis-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+  .analysis-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#e74c3c;margin-bottom:10px;}
   .analysis-title{font-size:15px;font-weight:500;color:var(--white);line-height:1.4;margin-bottom:10px;letter-spacing:-0.2px;}
   .analysis-desc{font-size:13px;color:var(--mid);line-height:1.6;font-weight:300;}
 
@@ -154,6 +154,7 @@
     <button class="filter-btn" onclick="filterNews('om')">🇴🇲 Oman</button>
     <button class="filter-btn" onclick="filterNews('bh')">🇧🇭 Bahrain</button>
     <button class="filter-btn" onclick="filterNews('kw')">🇰🇼 Kuwait</button>
+    <button class="filter-btn" onclick="filterNews('qa')">🇶🇦 Qatar</button>
   </div>
 
   <!-- LEAD STORY -->
@@ -340,6 +341,17 @@
         <div class="highlight-tag">Tender · 🇰🇼</div>
         <div class="highlight-text">Kuwait Oil Company Issues Largest-Ever IT Infrastructure Tender</div>
       </div>
+    </div>
+  </div>
+
+  <!-- EMAIL SUBSCRIBE -->
+  <div style="background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:48px;text-align:center;margin-bottom:0;margin-top:1px;">
+    <div style="font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:12px;">Stay informed</div>
+    <div style="font-size:24px;font-weight:300;color:var(--white);letter-spacing:-0.5px;margin-bottom:8px;">Get the daily GCC tender digest</div>
+    <div style="font-size:14px;color:var(--mid);margin-bottom:32px;font-weight:300;">2,500+ active tenders delivered every morning. 14-day free trial, no card required.</div>
+    <div style="display:flex;gap:8px;max-width:440px;margin:0 auto;">
+      <input type="email" placeholder="your@email.com" style="flex:1;background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:12px 16px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;">
+      <a href="signup.html" style="background:var(--white);color:var(--black);font-size:14px;font-weight:500;padding:12px 24px;border-radius:4px;white-space:nowrap;text-decoration:none;">Start free trial</a>
     </div>
   </div>
 
