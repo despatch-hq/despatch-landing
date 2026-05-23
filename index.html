@@ -25,8 +25,45 @@
   .nav-news:hover{color:var(--text);}
   .nav-cta{font-family:var(--sans);font-size:13px;color:var(--sub);text-decoration:none;border:1px solid var(--border2);padding:8px 20px;border-radius:4px;transition:all 0.2s;}
   .nav-cta:hover{border-color:var(--muted);color:var(--text);}
-  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;overflow:hidden;}
+  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;padding:120px 48px 80px;position:relative;overflow:hidden;}
   .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(231,76,60,0.04) 0%,transparent 70%);pointer-events:none;}
+  .hero-left{display:flex;flex-direction:column;}
+  .hero-right{position:relative;}
+  .digest-card-preview{background:var(--dark);border:1px solid var(--border2);border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px var(--border),0 40px 80px rgba(0,0,0,0.6);}
+  .dcp-header{background:var(--black);padding:20px 24px;border-bottom:1px solid var(--border);}
+  .dcp-logo{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+  .dcp-title{font-size:17px;font-weight:400;color:var(--white);margin-bottom:2px;}
+  .dcp-date{font-family:var(--mono);font-size:10px;color:var(--dim);}
+  .dcp-total{text-align:right;}
+  .dcp-total-label{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
+  .dcp-total-num{font-family:var(--mono);font-size:28px;color:var(--white);}
+  .dcp-header-row{display:flex;justify-content:space-between;align-items:flex-start;}
+  .dcp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:14px 24px;background:var(--black);border-bottom:1px solid var(--border);}
+  .dcp-stat{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;}
+  .dcp-stat-num{font-family:var(--mono);font-size:16px;font-weight:400;margin-bottom:3px;}
+  .dcp-stat-label{font-family:var(--mono);font-size:8px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;}
+  .dcp-stat.new .dcp-stat-num{color:#27ae60;}
+  .dcp-stat.critical .dcp-stat-num{color:#e74c3c;}
+  .dcp-stat.urgent .dcp-stat-num{color:#e67e22;}
+  .dcp-stat.normal .dcp-stat-num{color:var(--sub);}
+  .dcp-countries{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:14px;border-radius:6px;overflow:hidden;}
+  .dcp-country{background:var(--surface);padding:10px 8px;text-align:center;}
+  .dcp-country-flag{font-size:16px;margin-bottom:3px;}
+  .dcp-country-name{font-size:9px;color:var(--mid);margin-bottom:3px;letter-spacing:0.3px;}
+  .dcp-country-num{font-family:var(--mono);font-size:13px;color:var(--white);}
+  .dcp-cards{padding:0 14px 14px;}
+  .dcp-card{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--amber);border-radius:5px;padding:10px 12px;margin-bottom:6px;}
+  .dcp-card.critical{border-left-color:var(--red);}
+  .dcp-card-ref{font-family:var(--mono);font-size:9px;color:var(--dim);margin-bottom:3px;}
+  .dcp-card-title{font-size:11px;color:var(--white);line-height:1.4;margin-bottom:4px;}
+  .dcp-card-meta{font-size:10px;color:var(--mid);}
+  .dcp-card-closes{font-size:10px;color:var(--red);font-weight:500;}
+  .dcp-pulse{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px;animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;gap:48px;padding:100px 24px 60px;}
+    .hero-right{display:none;}
+  }
   .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
   .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--muted);}
   h1{font-family:var(--sans);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--white);max-width:700px;margin-bottom:32px;}
@@ -140,13 +177,61 @@
 </nav>
 
 <section class="hero">
-  <div class="hero-eyebrow">GCC Tender Intelligence</div>
-  <h1>Every government<br>tender. <em>Every morning.</em></h1>
-  <p class="hero-hook">2,500 government contracts open right now.<br>How many are you missing?</p>
-  <p class="hero-sub">Despatch monitors Bahrain, Oman, Kuwait, UAE, and Saudi Arabia's procurement portals daily — delivering active tenders to your inbox before your workday starts.</p>
-  <div class="hero-actions">
-    <a href="signup.html" class="btn-primary">Start free trial</a>
-    <span class="btn-note">14 days free · no card required</span>
+  <!-- LEFT -->
+  <div class="hero-left">
+    <div class="hero-eyebrow">GCC Tender Intelligence</div>
+    <h1>Every government<br>tender. <em>Every morning.</em></h1>
+    <p class="hero-hook">2,500 government contracts open right now.<br>How many are you missing?</p>
+    <p class="hero-sub">Despatch monitors Bahrain, Oman, Kuwait, UAE, and Saudi Arabia's procurement portals daily — delivering active tenders to your inbox before your workday starts.</p>
+    <div class="hero-actions">
+      <a href="signup.html" class="btn-primary">Start free trial</a>
+      <span class="btn-note">14 days free · no card required</span>
+    </div>
+  </div>
+  <!-- RIGHT — Live digest preview -->
+  <div class="hero-right">
+    <div class="digest-card-preview">
+      <div class="dcp-header">
+        <div class="dcp-header-row">
+          <div>
+            <div class="dcp-logo">Despatch</div>
+            <div class="dcp-title">GCC Tender Intelligence</div>
+            <div class="dcp-date">23 May, 2026</div>
+          </div>
+          <div class="dcp-total">
+            <div class="dcp-total-label">Total</div>
+            <div class="dcp-total-num">2,544</div>
+          </div>
+        </div>
+      </div>
+      <div class="dcp-stats">
+        <div class="dcp-stat new"><div class="dcp-stat-num">14</div><div class="dcp-stat-label">New</div></div>
+        <div class="dcp-stat critical"><div class="dcp-stat-num">97</div><div class="dcp-stat-label">Critical</div></div>
+        <div class="dcp-stat urgent"><div class="dcp-stat-num">985</div><div class="dcp-stat-label">Urgent</div></div>
+        <div class="dcp-stat normal"><div class="dcp-stat-num">1,448</div><div class="dcp-stat-label">Normal</div></div>
+      </div>
+      <div class="dcp-countries">
+        <div class="dcp-country"><div class="dcp-country-flag">🇸🇦</div><div class="dcp-country-name">Saudi Arabia</div><div class="dcp-country-num">1,509</div></div>
+        <div class="dcp-country"><div class="dcp-country-flag">🇴🇲</div><div class="dcp-country-name">Oman</div><div class="dcp-country-num">747</div></div>
+        <div class="dcp-country"><div class="dcp-country-flag">🇦🇪</div><div class="dcp-country-name">UAE</div><div class="dcp-country-num">130</div></div>
+        <div class="dcp-country"><div class="dcp-country-flag">🇧🇭</div><div class="dcp-country-name">Bahrain</div><div class="dcp-country-num">82</div></div>
+        <div class="dcp-country"><div class="dcp-country-flag">🇰🇼</div><div class="dcp-country-name">Kuwait</div><div class="dcp-country-num">50</div></div>
+        <div class="dcp-country" style="opacity:0.4;"><div class="dcp-country-flag">🇶🇦</div><div class="dcp-country-name">Qatar</div><div class="dcp-country-num" style="font-size:9px;color:var(--dim);">Soon</div></div>
+      </div>
+      <div class="dcp-cards">
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#27ae60;margin-bottom:8px;display:flex;align-items:center;"><span class="dcp-pulse"></span>New Tenders</div>
+        <div class="dcp-card critical">
+          <div class="dcp-card-ref">Ref: 260539005042</div>
+          <div class="dcp-card-title">Supply and installation of fire suppression systems for government complex</div>
+          <div class="dcp-card-closes">Closes: 25 May, 2026 (in 2 days)</div>
+        </div>
+        <div class="dcp-card">
+          <div class="dcp-card-ref">Ref: 74/2026/EA/HQ-15</div>
+          <div class="dcp-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
+          <div class="dcp-card-meta">Environment Authority · Oman</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
