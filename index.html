@@ -4,180 +4,218 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no,email=no,address=no">
-<meta name="description" content="Despatch — GCC Tender Intelligence. 2,500+ government tenders delivered to your inbox every morning across Bahrain, Oman, Kuwait, UAE, and Saudi Arabia.">
+<meta name="description" content="Despatch — GCC Tender Intelligence. 2,500+ government tenders delivered to your inbox every morning.">
 <title>Despatch — GCC Tender Intelligence</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --black:#080808;--dark:#0f0f0f;--surface:#161616;--border:#1f1f1f;--border2:#2a2a2a;
-    --muted:#3a3a3a;--dim:#555555;--mid:#777777;--sub:#999999;--text:#e8e8e8;--white:#f5f5f5;
-    --red:#e74c3c;--amber:#e67e22;--green:#27ae60;
-    --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
+    --black: #080808;
+    --white: #ffffff;
+    --off:   #f7f7f5;
+    --border:#e8e8e4;
+    --text:  #1a1a1a;
+    --sub:   #888888;
+    --dim:   #bbbbbb;
+    --red:   #e74c3c;
+    --amber: #e67e22;
+    --green: #27ae60;
+    --mono:  'DM Mono', monospace;
+    --sans:  'DM Sans', sans-serif;
   }
-  html{scroll-behavior:smooth;}
-  body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,8,8,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-  .logo{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--white);}
-  .nav-news{font-family:var(--sans);font-size:13px;color:var(--sub);text-decoration:none;padding:8px 16px;transition:color 0.2s;}
-  .nav-news:hover{color:var(--text);}
-  .nav-cta{font-family:var(--sans);font-size:13px;color:var(--sub);text-decoration:none;border:1px solid var(--border2);padding:8px 20px;border-radius:4px;transition:all 0.2s;}
-  .nav-cta:hover{border-color:var(--muted);color:var(--text);}
-  .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px;padding:120px 48px 80px;position:relative;overflow:hidden;}
-  .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(231,76,60,0.04) 0%,transparent 70%);pointer-events:none;}
-  .hero-left{display:flex;flex-direction:column;}
-  .hero-right{position:relative;}
-  .digest-card-preview{background:var(--dark);border:1px solid var(--border2);border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px var(--border),0 40px 80px rgba(0,0,0,0.6);}
-  .dcp-header{background:var(--black);padding:20px 24px;border-bottom:1px solid var(--border);}
-  .dcp-logo{font-family:var(--mono);font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
-  .dcp-title{font-size:17px;font-weight:400;color:var(--white);margin-bottom:2px;}
-  .dcp-date{font-family:var(--mono);font-size:10px;color:var(--dim);}
-  .dcp-total{text-align:right;}
-  .dcp-total-label{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
-  .dcp-total-num{font-family:var(--mono);font-size:28px;color:var(--white);}
-  .dcp-header-row{display:flex;justify-content:space-between;align-items:flex-start;}
-  .dcp-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:14px 24px;background:var(--black);border-bottom:1px solid var(--border);}
-  .dcp-stat{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;}
-  .dcp-stat-num{font-family:var(--mono);font-size:16px;font-weight:400;margin-bottom:3px;}
-  .dcp-stat-label{font-family:var(--mono);font-size:8px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;}
-  .dcp-stat.new .dcp-stat-num{color:#27ae60;}
-  .dcp-stat.critical .dcp-stat-num{color:#e74c3c;}
-  .dcp-stat.urgent .dcp-stat-num{color:#e67e22;}
-  .dcp-stat.normal .dcp-stat-num{color:var(--sub);}
-  .dcp-countries{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin:14px;border-radius:6px;overflow:hidden;}
-  .dcp-country{background:var(--surface);padding:10px 8px;text-align:center;}
-  .dcp-country-flag{font-size:16px;margin-bottom:3px;}
-  .dcp-country-name{font-size:9px;color:var(--mid);margin-bottom:3px;letter-spacing:0.3px;}
-  .dcp-country-num{font-family:var(--mono);font-size:13px;color:var(--white);}
-  .dcp-cards{padding:0 14px 14px;}
-  .dcp-card{background:var(--surface);border:1px solid var(--border2);border-left:2px solid var(--amber);border-radius:5px;padding:10px 12px;margin-bottom:6px;}
-  .dcp-card.critical{border-left-color:var(--red);}
-  .dcp-card-ref{font-family:var(--mono);font-size:9px;color:var(--dim);margin-bottom:3px;}
-  .dcp-card-title{font-size:11px;color:var(--white);line-height:1.4;margin-bottom:4px;}
-  .dcp-card-meta{font-size:10px;color:var(--mid);}
-  .dcp-card-closes{font-size:10px;color:var(--red);font-weight:500;}
-  .dcp-pulse{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px;animation:pulse 2s ease-in-out infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
-  @media(max-width:900px){
-    .hero{grid-template-columns:1fr;gap:48px;padding:100px 24px 60px;}
-    .hero-right{display:none;}
-  }
-  .hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#aaaaaa;margin-bottom:28px;display:flex;align-items:center;gap:12px;}
-  .hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--muted);}
-  h1{font-family:var(--sans);font-size:clamp(42px,6vw,72px);font-weight:300;line-height:1.05;letter-spacing:-1.5px;color:var(--white);max-width:700px;margin-bottom:32px;}
-  h1 em{font-style:normal;color:var(--sub);}
-  .hero-hook{font-size:20px;color:var(--white);line-height:1.5;max-width:520px;margin-bottom:16px;font-weight:300;letter-spacing:-0.2px;}
-  .hero-sub{font-size:15px;color:var(--mid);line-height:1.7;max-width:480px;margin-bottom:48px;font-weight:300;}
-  .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-  .btn-primary{display:inline-block;background:var(--white);color:var(--black);font-family:var(--sans);font-size:14px;font-weight:500;padding:14px 32px;border-radius:4px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
-  .btn-primary:hover{background:#fff;transform:translateY(-1px);}
-  .btn-note{font-family:var(--mono);font-size:11px;color:#888888;letter-spacing:0.5px;}
-  .ticker-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:14px 0;background:var(--dark);}
-  .ticker{display:flex;animation:ticker 32s linear infinite;white-space:nowrap;will-change:transform;backface-visibility:hidden;}
-  .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 40px;font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:1px;text-transform:uppercase;border-right:1px solid var(--border);}
-  .ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--muted);}
-  @keyframes ticker{from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);}}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);}
-  .stat{padding:48px 40px;border-right:1px solid var(--border);}
-  .stat:last-child{border-right:none;}
-  .stat-num{font-family:var(--mono);font-size:36px;font-weight:400;color:var(--white);margin-bottom:8px;letter-spacing:-1px;}
-  .stat-label{font-size:12px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;font-family:var(--mono);}
-  .section{padding:52px 48px;border-bottom:1px solid var(--border);}
-  .section-label{font-family:var(--mono);font-size:13px;letter-spacing:2.5px;text-transform:uppercase;color:#bbbbbb;margin-bottom:40px;font-weight:500;}
-  .countries-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-  .country-card{background:var(--dark);padding:36px 24px;text-align:center;transition:background 0.2s;}
-  .country-card:hover{background:var(--surface);}
-  .country-card.coming{opacity:0.35;}
-  .flag{font-size:28px;margin-bottom:12px;display:block;}
-  .country-name{font-size:11px;color:var(--mid);margin-bottom:12px;letter-spacing:0.5px;}
-  .country-count{font-family:var(--mono);font-size:24px;color:var(--white);font-weight:400;}
-  .qatar-bar{background:var(--dark);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;display:flex;align-items:center;gap:16px;padding:18px 28px;opacity:0.35;}
-  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-  .how-card{background:var(--dark);padding:40px 36px;}
-  .how-num{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:2px;margin-bottom:20px;}
-  .how-title{font-size:17px;font-weight:500;color:var(--white);margin-bottom:12px;letter-spacing:-0.3px;}
-  .how-desc{font-size:14px;color:var(--mid);line-height:1.7;font-weight:300;}
-  .digest-preview{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
-  .digest-header{background:var(--black);padding:28px 32px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-start;}
-  .digest-logo{font-family:var(--mono);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999999;margin-bottom:6px;}
-  .digest-title{font-size:20px;font-weight:400;color:var(--white);}
-  .digest-date{font-family:var(--mono);font-size:12px;color:#999999;margin-top:4px;}
-  .digest-total{text-align:right;}
-  .digest-total-label{font-family:var(--mono);font-size:11px;color:#999999;letter-spacing:2px;text-transform:uppercase;}
-  .digest-total-num{font-family:var(--mono);font-size:36px;color:var(--white);font-weight:400;}
-  .digest-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px 32px;background:var(--black);border-bottom:1px solid var(--border);}
-  .dstat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:14px 10px;text-align:center;}
-  .dstat-num{font-family:var(--mono);font-size:20px;font-weight:400;margin-bottom:4px;}
-  .dstat-label{font-family:var(--mono);font-size:9px;color:var(--dim);letter-spacing:1.5px;text-transform:uppercase;}
-  .dstat.new .dstat-num{color:var(--green);}
-  .dstat.critical .dstat-num{color:var(--red);}
-  .dstat.urgent .dstat-num{color:var(--amber);}
-  .dstat.normal .dstat-num{color:var(--sub);}
-  .digest-cards{padding:12px 32px 28px;}
-  .digest-section-label{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#27ae60;margin-bottom:12px;margin-top:20px;}
-  .digest-card{background:var(--dark);border:1px solid var(--border2);border-left:3px solid var(--muted);border-radius:6px;padding:16px;margin-bottom:8px;display:flex;flex-direction:column;gap:6px;}
-  .digest-card.urgent-card{border-left-color:var(--amber);}
-  .digest-card.critical-card{border-left-color:var(--red);}
-  .digest-card-top{display:flex;justify-content:space-between;align-items:flex-start;}
-  .digest-card-ref{font-family:var(--mono);font-size:10px;color:var(--dim);-webkit-touch-callout:none;}
-  .digest-card-country{font-size:11px;color:var(--sub);}
-  .digest-card-title{font-size:13px;font-weight:500;color:var(--white);line-height:1.4;}
-  .digest-card-auth{font-size:11px;color:var(--mid);}
-  .digest-card-closes{font-size:11px;color:var(--amber);font-weight:500;}
-  .digest-card-closes.critical{color:var(--red);}
-  .digest-card-btn{display:inline-block;background:var(--surface);border:1px solid var(--border2);color:var(--text);font-size:11px;font-weight:500;padding:6px 14px;border-radius:4px;margin-top:4px;width:fit-content;}
-  .early-access{background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:56px 48px;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;}
-  .ea-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(230,126,34,0.3);padding:4px 12px;border-radius:3px;margin-bottom:16px;}
-  .ea-title{font-size:28px;font-weight:300;color:var(--white);letter-spacing:-0.5px;margin-bottom:12px;}
-  .ea-desc{font-size:14px;color:var(--mid);line-height:1.7;max-width:480px;font-weight:300;}
-  .ea-action{text-align:right;flex-shrink:0;}
-  .ea-action .btn-primary{display:block;margin-bottom:10px;}
-  .ea-note{font-family:var(--mono);font-size:10px;color:#888888;letter-spacing:0.5px;}
-  footer{padding:20px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-logo{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#888888;}
-  .footer-links{display:flex;gap:24px;}
-  .footer-links a{font-size:12px;color:#888888;text-decoration:none;transition:color 0.2s;}
-  .footer-links a:hover{color:var(--sub);}
-  .footer-copy{font-family:var(--mono);font-size:11px;color:#666666;}
+  html { scroll-behavior: smooth; }
+  body { background: var(--white); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
 
-  .fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
-  .fade-up.visible{opacity:1;transform:translateY(0);}
+  /* NAV */
+  nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+  .logo { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; }
+  .nav-right { display: flex; align-items: center; gap: 8px; }
+  .nav-link { font-size: 13px; color: #888888; padding: 8px 16px; transition: color 0.2s; }
+  .nav-link:hover { color: #ffffff; }
+  .nav-cta { font-size: 13px; color: #888888; border: 1px solid #2a2a2a; padding: 8px 20px; border-radius: 4px; transition: all 0.2s; }
+  .nav-cta:hover { border-color: #555555; color: #ffffff; }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; padding: 100px 48px 64px; border-bottom: 1px solid var(--border); }
+  .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+  .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--dim); }
+  h1 { font-size: clamp(42px, 5.5vw, 66px); font-weight: 300; line-height: 1.08; letter-spacing: -1.5px; color: var(--text); margin-bottom: 24px; }
+  h1 em { font-style: normal; color: var(--sub); }
+  .hero-hook { font-size: 20px; color: var(--text); line-height: 1.5; margin-bottom: 14px; font-weight: 400; }
+  .hero-sub { font-size: 16px; color: #666666; line-height: 1.7; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
+  .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; background: var(--black); color: #ffffff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 4px; transition: all 0.2s; }
+  .btn-primary:hover { background: #222222; }
+  .btn-note { font-family: var(--mono); font-size: 11px; color: var(--sub); }
+
+  /* DIGEST PREVIEW */
+  .digest-preview { background: var(--off); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 40px rgba(0,0,0,0.06); }
+  .dp-header { background: var(--black); padding: 24px 28px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .dp-logo { font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #666666; margin-bottom: 5px; }
+  .dp-title { font-size: 18px; font-weight: 400; color: #ffffff; }
+  .dp-date { font-family: var(--mono); font-size: 10px; color: #666666; margin-top: 3px; }
+  .dp-total-label { font-family: var(--mono); font-size: 9px; color: #666666; letter-spacing: 2px; text-transform: uppercase; text-align: right; }
+  .dp-total-num { font-family: var(--mono); font-size: 32px; color: #ffffff; font-weight: 400; text-align: right; }
+  .dp-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; padding: 14px 28px; background: var(--black); border-bottom: 1px solid #1a1a1a; }
+  .dp-stat { background: #111111; border: 0.5px solid #2a2a2a; border-radius: 5px; padding: 10px 6px; text-align: center; }
+  .dp-stat-num { font-family: var(--mono); font-size: 15px; margin-bottom: 3px; }
+  .dp-stat-label { font-family: var(--mono); font-size: 7px; color: #555555; letter-spacing: 1.5px; text-transform: uppercase; }
+  .dp-stat.new .dp-stat-num { color: var(--green); }
+  .dp-stat.crit .dp-stat-num { color: var(--red); }
+  .dp-stat.urg .dp-stat-num { color: var(--amber); }
+  .dp-stat.norm .dp-stat-num { color: #555555; }
+  .dp-body { background: var(--white); padding: 20px 28px; }
+  .dp-snap-label { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 12px; }
+  .dp-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; }
+  .dp-row-name { font-size: 11px; color: var(--sub); width: 110px; flex-shrink: 0; }
+  .dp-bar-bg { flex: 1; background: #f0f0ee; border-radius: 2px; height: 4px; overflow: hidden; }
+  .dp-bar-fill { background: var(--red); height: 4px; border-radius: 2px; }
+  .dp-row-num { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--text); width: 30px; text-align: right; }
+  .dp-divider { height: 1px; background: var(--border); margin: 14px 0; }
+  .dp-section-label { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .dp-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.3;} }
+  .dp-card { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: 0 6px 6px 0; padding: 12px; margin-bottom: 8px; }
+  .dp-card.crit { border-left-color: var(--red); border-radius: 0 6px 6px 0; }
+  .dp-card-ref { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-bottom: 4px; }
+  .dp-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+  .dp-card-country { font-size: 10px; color: var(--sub); }
+  .dp-card-title { font-size: 12px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+  .dp-card-closes { font-size: 11px; color: var(--red); font-weight: 500; }
+  .dp-card-closes.amber { color: var(--amber); }
+
+  /* TICKER */
+  .ticker-wrap { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; padding: 13px 0; background: var(--off); }
+  .ticker { display: flex; animation: ticker 28s linear infinite; white-space: nowrap; will-change: transform; }
+  @keyframes ticker { from{transform:translate3d(0,0,0);}to{transform:translate3d(-50%,0,0);} }
+  .ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 36px; font-family: var(--mono); font-size: 11px; color: var(--sub); letter-spacing: 1px; text-transform: uppercase; border-right: 1px solid var(--border); }
+  .ticker-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--dim); }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
+  .stat { padding: 32px 36px; border-right: 1px solid var(--border); }
+  .stat:last-child { border-right: none; }
+  .stat-num { font-family: var(--mono); font-size: 36px; color: var(--text); margin-bottom: 8px; }
+  .stat-label { font-size: 12px; color: var(--sub); letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* SECTIONS */
+  .section { padding: 52px 48px; border-bottom: 1px solid var(--border); }
+  .section-label { font-family: var(--mono); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 36px; }
+
+  /* COUNTRIES */
+  .countries-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .country-card { background: var(--white); padding: 32px 20px; text-align: center; transition: background 0.2s; }
+  .country-card:hover { background: var(--off); }
+  .country-card.faded { opacity: 0.4; }
+  .flag { font-size: 26px; display: block; margin-bottom: 10px; }
+  .country-name { font-size: 11px; color: var(--sub); margin-bottom: 10px; }
+  .country-count { font-family: var(--mono); font-size: 22px; color: var(--text); }
+
+  /* HOW IT WORKS */
+  .how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .how-card { background: var(--white); padding: 28px 28px; }
+  .how-num { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 2px; margin-bottom: 16px; }
+  .how-title { font-size: 19px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+  .how-desc { font-size: 14px; color: #666666; line-height: 1.7; font-weight: 300; }
+
+  /* SAMPLE DIGEST */
+  .sample-digest { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+  .sd-header { background: var(--black); padding: 24px 32px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .sd-logo { font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #666666; margin-bottom: 5px; }
+  .sd-title { font-size: 20px; font-weight: 400; color: #ffffff; }
+  .sd-date { font-family: var(--mono); font-size: 11px; color: #777777; margin-top: 4px; }
+  .sd-total-label { font-family: var(--mono); font-size: 9px; color: #666666; letter-spacing: 2px; text-transform: uppercase; text-align: right; }
+  .sd-total-num { font-family: var(--mono); font-size: 36px; color: #ffffff; text-align: right; }
+  .sd-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; padding: 16px 32px; background: var(--black); border-bottom: 1px solid #1a1a1a; }
+  .sd-stat { background: #111111; border: 0.5px solid #2a2a2a; border-radius: 6px; padding: 12px 8px; text-align: center; }
+  .sd-stat-num { font-family: var(--mono); font-size: 18px; margin-bottom: 4px; }
+  .sd-stat-label { font-family: var(--mono); font-size: 8px; color: #555555; letter-spacing: 1.5px; text-transform: uppercase; }
+  .sd-stat.new .sd-stat-num { color: var(--green); }
+  .sd-stat.crit .sd-stat-num { color: var(--red); }
+  .sd-stat.urg .sd-stat-num { color: var(--amber); }
+  .sd-stat.norm .sd-stat-num { color: #555555; }
+  .sd-body { background: var(--white); padding: 18px 28px; }
+  .sd-snap-label { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 14px; }
+  .sd-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .sd-row-name { font-size: 12px; color: var(--sub); width: 140px; flex-shrink: 0; }
+  .sd-bar-bg { flex: 1; background: #f0f0ee; border-radius: 2px; height: 4px; overflow: hidden; }
+  .sd-bar-fill { background: var(--red); height: 4px; border-radius: 2px; }
+  .sd-row-num { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--text); width: 32px; text-align: right; }
+  .sd-more { font-size: 11px; color: var(--dim); margin-top: 8px; font-style: italic; }
+  .sd-divider { height: 1px; background: var(--border); margin: 18px 0; }
+  .sd-new-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .sd-pulse { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+  .sd-urgent-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin: 16px 0 10px; font-weight: 700; }
+  .sd-card { background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 0 8px 8px 0; padding: 16px; margin-bottom: 10px; }
+  .sd-card.amber { border-left-color: var(--amber); border-radius: 0 8px 8px 0; }
+  .sd-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  .sd-card-ref { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+  .sd-card-country { font-size: 11px; color: var(--sub); }
+  .sd-card-title { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 5px; }
+  .sd-card-auth { font-size: 12px; color: #666666; margin-bottom: 10px; }
+  .sd-card-closes { font-size: 12px; color: var(--red); font-weight: 500; margin-bottom: 12px; }
+  .sd-card-closes.amber { color: var(--amber); }
+  .sd-card-btn { display: inline-block; background: var(--black); color: #ffffff; font-size: 11px; font-weight: 600; padding: 7px 14px; border-radius: 5px; }
+  .sd-footer-note { font-size: 12px; color: var(--dim); text-align: center; padding: 10px 0 4px; font-family: var(--mono); }
+
+  /* EARLY ACCESS */
+  .early-access { background: var(--off); border: 1px solid var(--border); border-radius: 8px; padding: 40px 44px; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+  .ea-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(230,126,34,0.4); padding: 4px 12px; border-radius: 3px; margin-bottom: 14px; }
+  .ea-title { font-size: 30px; font-weight: 300; color: var(--text); letter-spacing: -0.5px; margin-bottom: 10px; }
+  .ea-desc { font-size: 14px; color: var(--sub); line-height: 1.7; max-width: 460px; font-weight: 300; }
+  .ea-action { text-align: right; flex-shrink: 0; }
+  .ea-action .btn-primary { display: block; margin-bottom: 8px; }
+  .ea-note { font-family: var(--mono); font-size: 10px; color: var(--sub); }
+
+  /* FOOTER */
+  footer { background: var(--black); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #555555; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 12px; color: #555555; transition: color 0.2s; }
+  .footer-links a:hover { color: #888888; }
+  .footer-copy { font-family: var(--mono); font-size: 11px; color: #333333; }
+
+  /* FADE UP */
+  .fade-up { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
   @media(max-width:900px){
     nav{padding:16px 24px;}
-    .hero{padding:100px 24px 60px;}
-    h1{font-size:38px;}
-    .stats{grid-template-columns:repeat(2,1fr);}
+    .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:48px;}
+    .hero-right{display:none;}
+    .stats{grid-template-columns:1fr 1fr;}
     .stat{border-bottom:1px solid var(--border);}
-    .countries-grid{grid-template-columns:repeat(3,1fr);}
+    .countries-grid{grid-template-columns:1fr 1fr;}
     .how-grid{grid-template-columns:1fr;}
-    .section{padding:60px 24px;}
-    .early-access{padding:40px 28px;flex-direction:column;}
+    .section{padding:52px 24px;}
+    .early-access{padding:36px 28px;flex-direction:column;}
     .ea-action{text-align:left;width:100%;}
-    .digest-stats{grid-template-columns:repeat(2,1fr);}
-    .digest-header{flex-direction:column;gap:12px;}
-    .digest-total{text-align:left;}
+    .sd-stats{grid-template-columns:repeat(2,1fr);}
     footer{padding:24px;flex-direction:column;align-items:flex-start;}
   }
   @media(max-width:600px){
-    .countries-grid{grid-template-columns:repeat(2,1fr);}
+    .countries-grid{grid-template-columns:1fr 1fr;}
     .stats{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="logo">Despatch</div>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <a href="news.html" class="nav-news">News</a>
+  <div class="nav-right">
+    <a href="news.html" class="nav-link">News</a>
     <a href="signup.html" class="nav-cta">Start free trial</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <!-- LEFT -->
   <div class="hero-left">
     <div class="hero-eyebrow">GCC Tender Intelligence</div>
     <h1>Every government<br>tender. <em>Every morning.</em></h1>
@@ -185,56 +223,52 @@
     <p class="hero-sub">Despatch monitors Bahrain, Oman, Kuwait, UAE, and Saudi Arabia's procurement portals daily — delivering active tenders to your inbox before your workday starts.</p>
     <div class="hero-actions">
       <a href="signup.html" class="btn-primary">Start free trial</a>
-      <span class="btn-note">14 days free · no card required</span>
+      <span class="btn-note">1 month free · no card required</span>
     </div>
   </div>
-  <!-- RIGHT — Live digest preview -->
   <div class="hero-right">
-    <div class="digest-card-preview">
-      <div class="dcp-header">
-        <div class="dcp-header-row">
-          <div>
-            <div class="dcp-logo">Despatch</div>
-            <div class="dcp-title">GCC Tender Intelligence</div>
-            <div class="dcp-date">23 May, 2026</div>
-          </div>
-          <div class="dcp-total">
-            <div class="dcp-total-label">Total</div>
-            <div class="dcp-total-num">2,544</div>
-          </div>
+    <div class="digest-preview">
+      <div class="dp-header">
+        <div>
+          <div class="dp-logo">Despatch</div>
+          <div class="dp-title">GCC Tender Intelligence</div>
+          <div class="dp-date">24 May, 2026</div>
+        </div>
+        <div>
+          <div class="dp-total-label">Total</div>
+          <div class="dp-total-num">2,544</div>
         </div>
       </div>
-      <div class="dcp-stats">
-        <div class="dcp-stat new"><div class="dcp-stat-num">14</div><div class="dcp-stat-label">New</div></div>
-        <div class="dcp-stat critical"><div class="dcp-stat-num">97</div><div class="dcp-stat-label">Critical</div></div>
-        <div class="dcp-stat urgent"><div class="dcp-stat-num">985</div><div class="dcp-stat-label">Urgent</div></div>
-        <div class="dcp-stat normal"><div class="dcp-stat-num">1,448</div><div class="dcp-stat-label">Normal</div></div>
+      <div class="dp-stats">
+        <div class="dp-stat new"><div class="dp-stat-num">14</div><div class="dp-stat-label">New</div></div>
+        <div class="dp-stat crit"><div class="dp-stat-num">97</div><div class="dp-stat-label">Critical</div></div>
+        <div class="dp-stat urg"><div class="dp-stat-num">985</div><div class="dp-stat-label">Urgent</div></div>
+        <div class="dp-stat norm"><div class="dp-stat-num">1,448</div><div class="dp-stat-label">Normal</div></div>
       </div>
-      <div class="dcp-countries">
-        <div class="dcp-country"><div class="dcp-country-flag">🇸🇦</div><div class="dcp-country-name">Saudi Arabia</div><div class="dcp-country-num">1,509</div></div>
-        <div class="dcp-country"><div class="dcp-country-flag">🇴🇲</div><div class="dcp-country-name">Oman</div><div class="dcp-country-num">747</div></div>
-        <div class="dcp-country"><div class="dcp-country-flag">🇦🇪</div><div class="dcp-country-name">UAE</div><div class="dcp-country-num">130</div></div>
-        <div class="dcp-country"><div class="dcp-country-flag">🇧🇭</div><div class="dcp-country-name">Bahrain</div><div class="dcp-country-num">82</div></div>
-        <div class="dcp-country"><div class="dcp-country-flag">🇰🇼</div><div class="dcp-country-name">Kuwait</div><div class="dcp-country-num">50</div></div>
-        <div class="dcp-country" style="opacity:0.4;"><div class="dcp-country-flag">🇶🇦</div><div class="dcp-country-name">Qatar</div><div class="dcp-country-num" style="font-size:9px;color:var(--dim);">Soon</div></div>
-      </div>
-      <div class="dcp-cards">
-        <div style="font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#27ae60;margin-bottom:8px;display:flex;align-items:center;"><span class="dcp-pulse"></span>New Tenders</div>
-        <div class="dcp-card critical">
-          <div class="dcp-card-ref">Ref: 260539005042</div>
-          <div class="dcp-card-title">Supply and installation of fire suppression systems for government complex</div>
-          <div class="dcp-card-closes">Closes: 25 May, 2026 (in 2 days)</div>
+      <div class="dp-body">
+        <div class="dp-snap-label">Sector Snapshot</div>
+        <div class="dp-row"><span class="dp-row-name">Medical</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:88%"></div></div><span class="dp-row-num">410</span></div>
+        <div class="dp-row"><span class="dp-row-name">Construction</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:46%"></div></div><span class="dp-row-num">190</span></div>
+        <div class="dp-row"><span class="dp-row-name">IT & Technology</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:38%"></div></div><span class="dp-row-num">156</span></div>
+        <div class="dp-row"><span class="dp-row-name">MEP & Engineering</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:35%"></div></div><span class="dp-row-num">144</span></div>
+        <div class="dp-divider"></div>
+        <div class="dp-section-label"><span class="dp-dot"></span>New Tenders</div>
+        <div class="dp-card crit">
+          <div class="dp-card-ref">Ref: 260539005042 &nbsp;·&nbsp; <span class="dp-card-country">🇸🇦 Saudi Arabia</span></div>
+          <div class="dp-card-title">Supply and installation of fire suppression systems for government complex</div>
+          <div class="dp-card-closes">Closes: 25 May, 2026 (in 2 days)</div>
         </div>
-        <div class="dcp-card">
-          <div class="dcp-card-ref">Ref: 74/2026/EA/HQ-15</div>
-          <div class="dcp-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
-          <div class="dcp-card-meta">Environment Authority · Oman</div>
+        <div class="dp-card">
+          <div class="dp-card-ref">Ref: 74/2026/EA/HQ-15 &nbsp;·&nbsp; <span class="dp-card-country">🇴🇲 Oman</span></div>
+          <div class="dp-card-title">Provision of cleaning and facilities management services</div>
+          <div class="dp-card-closes amber">Closes: 28 May, 2026 (in 5 days)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker">
     <span class="ticker-item"><span class="ticker-dot"></span>Bahrain Tender Board</span>
@@ -252,6 +286,7 @@
   </div>
 </div>
 
+<!-- STATS -->
 <div class="stats fade-up">
   <div class="stat"><div class="stat-num">2,500+</div><div class="stat-label">Daily tenders</div></div>
   <div class="stat"><div class="stat-num">5</div><div class="stat-label">GCC countries</div></div>
@@ -259,18 +294,20 @@
   <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Delivery</div></div>
 </div>
 
+<!-- COUNTRIES -->
 <section class="section fade-up">
   <div class="section-label">Countries covered</div>
   <div class="countries-grid">
     <div class="country-card"><span class="flag">🇸🇦</span><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
     <div class="country-card"><span class="flag">🇴🇲</span><div class="country-name">Oman</div><div class="country-count">754</div></div>
     <div class="country-card"><span class="flag">🇦🇪</span><div class="country-name">UAE</div><div class="country-count">122</div></div>
-    <div class="country-card"><span class="flag">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">75</div></div>
+    <div class="country-card"><span class="flag">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">82</div></div>
     <div class="country-card"><span class="flag">🇰🇼</span><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
-    <div class="country-card coming"><span class="flag">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--dim);font-family:var(--sans);">Coming soon</div></div>
+    <div class="country-card faded"><span class="flag">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--sub);">Coming soon</div></div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section class="section fade-up">
   <div class="section-label">How it works</div>
   <div class="how-grid">
@@ -292,113 +329,74 @@
   </div>
 </section>
 
+<!-- SAMPLE DIGEST -->
 <section class="section fade-up">
   <div class="section-label">Sample digest</div>
-  <div class="digest-preview">
-    <div class="digest-header">
+  <div class="sample-digest">
+    <div class="sd-header">
       <div>
-        <div class="digest-logo" style="color:#666666;">Despatch</div>
-        <div class="digest-title">GCC Tender Intelligence</div>
-        <div class="digest-date" style="color:#888888;">23 May, 2026</div>
+        <div class="sd-logo">Despatch</div>
+        <div class="sd-title">GCC Tender Intelligence</div>
+        <div class="sd-date">24 May, 2026</div>
       </div>
-      <div class="digest-total">
-        <div class="digest-total-label">Total</div>
-        <div class="digest-total-num">2,544</div>
+      <div>
+        <div class="sd-total-label">Total</div>
+        <div class="sd-total-num">2,544</div>
       </div>
     </div>
-
-    <!-- SECTOR SNAPSHOT -->
-    <div style="padding:20px 32px 0;">
-      <div style="font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#aaaaaa;margin-bottom:14px;">Sector Snapshot</div>
-      <div style="display:flex;flex-direction:column;gap:8px;">
-
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="font-size:12px;color:#cccccc;width:160px;flex-shrink:0;">Medical & Healthcare</div>
-          <div style="flex:1;background:#2a2a2a;border-radius:2px;height:4px;overflow:hidden;">
-            <div style="background:#e74c3c;width:88%;height:100%;border-radius:2px;"></div>
-          </div>
-          <div style="font-family:var(--mono);font-size:12px;color:#ffffff;font-weight:500;width:36px;text-align:right;">410</div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="font-size:12px;color:#cccccc;width:160px;flex-shrink:0;">Construction</div>
-          <div style="flex:1;background:#2a2a2a;border-radius:2px;height:4px;overflow:hidden;">
-            <div style="background:#e74c3c;width:46%;height:100%;border-radius:2px;"></div>
-          </div>
-          <div style="font-family:var(--mono);font-size:12px;color:#ffffff;font-weight:500;width:36px;text-align:right;">190</div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="font-size:12px;color:#cccccc;width:160px;flex-shrink:0;">IT & Technology</div>
-          <div style="flex:1;background:#2a2a2a;border-radius:2px;height:4px;overflow:hidden;">
-            <div style="background:#e74c3c;width:38%;height:100%;border-radius:2px;"></div>
-          </div>
-          <div style="font-family:var(--mono);font-size:12px;color:#ffffff;font-weight:500;width:36px;text-align:right;">156</div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="font-size:12px;color:#cccccc;width:160px;flex-shrink:0;">MEP & Engineering</div>
-          <div style="flex:1;background:#2a2a2a;border-radius:2px;height:4px;overflow:hidden;">
-            <div style="background:#e74c3c;width:35%;height:100%;border-radius:2px;"></div>
-          </div>
-          <div style="font-family:var(--mono);font-size:12px;color:#ffffff;font-weight:500;width:36px;text-align:right;">144</div>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:12px;">
-          <div style="font-size:12px;color:#cccccc;width:160px;flex-shrink:0;">Transport & Logistics</div>
-          <div style="flex:1;background:#2a2a2a;border-radius:2px;height:4px;overflow:hidden;">
-            <div style="background:#e74c3c;width:18%;height:100%;border-radius:2px;"></div>
-          </div>
-          <div style="font-family:var(--mono);font-size:12px;color:#ffffff;font-weight:500;width:36px;text-align:right;">73</div>
-        </div>
-
-      </div>
-      <div style="font-size:12px;color:#888888;padding:10px 0 6px;font-family:var(--mono);">+ 12 more sectors tracked daily</div>
+    <div class="sd-stats">
+      <div class="sd-stat new"><div class="sd-stat-num">14</div><div class="sd-stat-label">New</div></div>
+      <div class="sd-stat crit"><div class="sd-stat-num">97</div><div class="sd-stat-label">Critical</div></div>
+      <div class="sd-stat urg"><div class="sd-stat-num">985</div><div class="sd-stat-label">Urgent</div></div>
+      <div class="sd-stat norm"><div class="sd-stat-num">1,448</div><div class="sd-stat-label">Normal</div></div>
     </div>
-
-    <div style="height:1px;background:#2a2a2a;margin:0 32px;margin-bottom:0;"></div>
-
-    <div class="digest-cards">
-      <div class="digest-section-label" style="display:flex;align-items:center;"><span style="display:inline-block;width:6px;height:6px;background:#27ae60;border-radius:50%;margin-right:8px;flex-shrink:0;animation:pulse 2s ease-in-out infinite;"></span>New Tenders</div>
-      <div class="digest-card critical-card">
-        <div class="digest-card-top">
-          <span class="digest-card-ref">Ref: 260539005042</span>
-          <span class="digest-card-country">🇸🇦 Saudi Arabia</span>
+    <div class="sd-body">
+      <div class="sd-snap-label">Sector Snapshot</div>
+      <div class="sd-row"><span class="sd-row-name">Medical & Healthcare</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:88%"></div></div><span class="sd-row-num">410</span></div>
+      <div class="sd-row"><span class="sd-row-name">Construction</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:46%"></div></div><span class="sd-row-num">190</span></div>
+      <div class="sd-row"><span class="sd-row-name">IT & Technology</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:38%"></div></div><span class="sd-row-num">156</span></div>
+      <div class="sd-row"><span class="sd-row-name">MEP & Engineering</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:35%"></div></div><span class="sd-row-num">144</span></div>
+      <div class="sd-row"><span class="sd-row-name">Transport</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:18%"></div></div><span class="sd-row-num">73</span></div>
+      <div class="sd-more">+ 12 more sectors tracked daily</div>
+      <div class="sd-divider"></div>
+      <div class="sd-new-label"><span class="sd-pulse"></span>New Tenders</div>
+      <div class="sd-card">
+        <div class="sd-card-top">
+          <span class="sd-card-ref">Ref: 260539005042</span>
+          <span class="sd-card-country">🇸🇦 Saudi Arabia</span>
         </div>
-        <div class="digest-card-title">Supply and installation of fire suppression systems for government complex</div>
-        <div class="digest-card-auth">Ministry of Finance — Procurement Department</div>
-        <div class="digest-card-closes critical">Closes: 25 May, 2026 (in 2 days)</div>
-        <div class="digest-card-btn">View Tender</div>
+        <div class="sd-card-title">Supply and installation of fire suppression systems for government complex</div>
+        <div class="sd-card-auth">Ministry of Finance — Procurement Department</div>
+        <div class="sd-card-closes">Closes: 25 May, 2026 (in 2 days)</div>
+        <a class="sd-card-btn">View Tender</a>
       </div>
-
-      <div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#e74c3c;letter-spacing:1.5px;text-transform:uppercase;margin:16px 0 10px;">Urgent — Closes Within 7 Days</div>
-      <div class="digest-card urgent-card">
-        <div class="digest-card-top">
-          <span class="digest-card-ref">Ref: 74/2026/EA/HQ-15</span>
-          <span class="digest-card-country">🇴🇲 Oman</span>
+      <div class="sd-urgent-label">Urgent — Closes Within 7 Days</div>
+      <div class="sd-card amber">
+        <div class="sd-card-top">
+          <span class="sd-card-ref">Ref: 74/2026/EA/HQ-15</span>
+          <span class="sd-card-country">🇴🇲 Oman</span>
         </div>
-        <div class="digest-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
-        <div class="digest-card-auth">Environment Authority</div>
-        <div class="digest-card-closes">Closes: 28 May, 2026 (in 5 days)</div>
-        <div class="digest-card-btn">View Tender</div>
+        <div class="sd-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
+        <div class="sd-card-auth">Environment Authority</div>
+        <div class="sd-card-closes amber">Closes: 28 May, 2026 (in 5 days)</div>
+        <a class="sd-card-btn">View Tender</a>
       </div>
-      <div class="digest-card urgent-card">
-        <div class="digest-card-top">
-          <span class="digest-card-ref">Ref: BMD-25/0022</span>
-          <span class="digest-card-country">🇧🇭 Bahrain</span>
+      <div class="sd-card amber">
+        <div class="sd-card-top">
+          <span class="sd-card-ref">Ref: BMD-25/0022</span>
+          <span class="sd-card-country">🇧🇭 Bahrain</span>
         </div>
-        <div class="digest-card-title">Annual maintenance contract for HVAC systems across Ministry buildings</div>
-        <div class="digest-card-auth">Ministry of Works</div>
-        <div class="digest-card-closes">Closes: 29 May, 2026 (in 6 days)</div>
-        <div class="digest-card-btn">View Tender</div>
+        <div class="sd-card-title">Annual maintenance contract for HVAC systems across Ministry buildings</div>
+        <div class="sd-card-auth">Ministry of Works</div>
+        <div class="sd-card-closes amber">Closes: 29 May, 2026 (in 6 days)</div>
+        <a class="sd-card-btn">View Tender</a>
       </div>
-
-      <div style="font-size:12px;color:#aaaaaa;text-align:center;padding:12px 0 4px;font-family:var(--mono);">+ 985 more urgent · 1,448 normal tenders in your daily digest</div>
+      <div class="sd-footer-note">+ 985 more urgent · 1,448 normal tenders in your daily digest</div>
     </div>
   </div>
 </section>
 
-
+<!-- EARLY ACCESS -->
 <section class="section fade-up">
   <div class="early-access">
     <div>
@@ -407,12 +405,13 @@
       <div class="ea-desc">Despatch is in early access. The first 20 subscribers get a permanently reduced rate — start your free trial now to secure it before it's gone. No card required.</div>
     </div>
     <div class="ea-action">
-      <a href="signup.html" class="btn-primary">Start 14-day free trial</a>
+      <a href="signup.html" class="btn-primary">Start 1-month free trial</a>
       <div class="ea-note">no card required · cancel anytime</div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Despatch</div>
   <div class="footer-links">
@@ -425,7 +424,7 @@
 <script>
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, {threshold:0.1});
+  }, {threshold: 0.08});
   document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 

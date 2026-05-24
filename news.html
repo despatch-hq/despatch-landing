@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="format-detection" content="telephone=no,email=no,address=no">
-<meta name="description" content="GCC Tender News — Latest procurement and infrastructure news from Bahrain, Oman, Kuwait, UAE, and Saudi Arabia.">
 <title>News — Despatch</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,107 +11,93 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --black:#080808;--dark:#0f0f0f;--surface:#161616;--border:#1f1f1f;--border2:#2a2a2a;
-    --muted:#3a3a3a;--dim:#555555;--mid:#777777;--sub:#999999;--text:#e8e8e8;--white:#f5f5f5;
-    --red:#e74c3c;--amber:#e67e22;--green:#27ae60;
+    --black:#080808;--white:#ffffff;--off:#f7f7f5;--border:#e8e8e4;
+    --text:#1a1a1a;--sub:#888888;--dim:#bbbbbb;--amber:#f39c12;--red:#e74c3c;--green:#27ae60;
     --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
   }
   html{scroll-behavior:smooth;}
-  body{background:var(--black);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{text-decoration:none;color:inherit;}
-
-  /* NAV */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,8,8,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
-  .logo{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--white);}
+  nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:20px 48px;position:fixed;top:0;left:0;right:0;z-index:100;}
+  .logo{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff;}
   .nav-links{display:flex;align-items:center;gap:8px;}
-  .nav-link{font-size:13px;color:var(--sub);padding:8px 16px;border-radius:4px;transition:color 0.2s;}
-  .nav-link:hover{color:var(--text);}
-  .nav-link.active{color:var(--white);}
-  .nav-cta{font-size:13px;color:var(--sub);border:1px solid var(--border2);padding:8px 20px;border-radius:4px;transition:all 0.2s;}
-  .nav-cta:hover{border-color:var(--muted);color:var(--text);}
-
-  /* PAGE */
-  .page{padding:120px 48px 32px;max-width:1200px;margin:0 auto;}
-
-  /* HEADER */
-  .page-header{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border);}
-  .page-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:12px;}
-  .page-title{font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--white);letter-spacing:-1px;margin-bottom:8px;}
-  .page-sub{font-size:14px;color:var(--mid);font-weight:300;}
-
-  /* COUNTRY FILTER */
-  .filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:40px;flex-wrap:wrap;}
+  .nav-link{font-size:13px;color:#666666;padding:8px 16px;transition:color 0.2s;}
+  .nav-link:hover,.nav-link.active{color:#ffffff;}
+  .nav-cta{font-size:13px;color:#666666;border:1px solid #2a2a2a;padding:8px 20px;border-radius:4px;transition:all 0.2s;}
+  .nav-cta:hover{border-color:#555555;color:#ffffff;}
+  .page{padding:80px 48px 48px;max-width:1200px;margin:0 auto;}
+  .page-header{margin-bottom:40px;padding-bottom:28px;border-bottom:1px solid var(--border);}
+  .page-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);margin-bottom:10px;}
+  .page-title{font-size:clamp(32px,4vw,48px);font-weight:300;color:var(--text);letter-spacing:-0.8px;margin-bottom:6px;}
+  .page-sub{font-size:14px;color:var(--sub);font-weight:300;}
+  .filter-bar{display:flex;align-items:center;gap:8px;margin-bottom:36px;flex-wrap:wrap;}
   .filter-label{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--dim);margin-right:4px;}
-  .filter-btn{font-family:var(--mono);font-size:11px;color:var(--sub);border:1px solid var(--border2);padding:6px 14px;border-radius:3px;cursor:pointer;background:transparent;transition:all 0.2s;letter-spacing:0.5px;}
-  .filter-btn:hover{border-color:var(--muted);color:var(--text);}
-  .filter-btn.active{background:var(--surface);border-color:var(--sub);color:var(--white);}
-
-  /* LEAD STORY */
-  .news-lead{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
-  .news-lead-main{background:var(--dark);padding:40px 36px;}
-  .news-lead-meta{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
-  .news-tag{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#f39c12;border:1px solid rgba(243,156,18,0.4);padding:3px 10px;border-radius:3px;}
+  .filter-btn{font-family:var(--mono);font-size:11px;color:var(--sub);border:1px solid var(--border);padding:6px 14px;border-radius:3px;cursor:pointer;background:transparent;transition:all 0.2s;letter-spacing:0.5px;}
+  .filter-btn:hover{border-color:var(--sub);color:var(--text);}
+  .filter-btn.active{background:var(--text);border-color:var(--text);color:var(--white);}
+  .news-lead{display:grid;grid-template-columns:1.6fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+  .news-lead-main{background:var(--white);padding:28px 28px;}
+  .news-lead-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .news-tag{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);border:1px solid rgba(243,156,18,0.4);padding:3px 10px;border-radius:3px;}
   .news-country{font-size:12px;color:var(--sub);}
-  .news-lead-title{font-size:24px;font-weight:400;color:var(--white);line-height:1.35;letter-spacing:-0.3px;margin-bottom:16px;}
-  .news-lead-sub{font-size:14px;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:24px;}
+  .news-lead-title{font-size:24px;font-weight:400;color:var(--text);line-height:1.35;letter-spacing:-0.3px;margin-bottom:14px;}
+  .news-lead-sub{font-size:14px;color:#666666;line-height:1.7;font-weight:300;margin-bottom:20px;}
   .news-lead-footer{display:flex;align-items:center;gap:16px;}
   .news-date{font-family:var(--mono);font-size:11px;color:var(--dim);}
-  .news-badge{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);padding:3px 10px;border:1px solid var(--border2);border-radius:3px;}
-  .news-lead-sidebar{background:var(--surface);padding:28px 24px;display:flex;flex-direction:column;}
-  .news-sidebar-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-  .news-sidebar-item{padding:14px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.2s;}
+  .news-badge{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--sub);padding:3px 10px;border:1px solid var(--border);border-radius:3px;}
+  .news-lead-sidebar{background:var(--off);padding:28px 24px;display:flex;flex-direction:column;}
+  .news-sidebar-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sub);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  .news-sidebar-item{padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;}
   .news-sidebar-item:last-child{border-bottom:none;}
-  .news-sidebar-item-top{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
-  .news-tag-sm{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#f39c12;}
-  .news-sidebar-title{font-size:13px;color:var(--text);line-height:1.4;}
-
-  /* NEWS GRID */
-  .grid-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;}
-  .grid-title{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#888888;}
+  .news-sidebar-item-top{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+  .news-tag-sm{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--amber);}
+  .news-sidebar-title{font-size:14px;color:var(--text);line-height:1.4;}
+  .grid-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;}
+  .grid-title{font-family:var(--mono);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--sub);}
   .grid-sub{font-family:var(--mono);font-size:10px;color:var(--dim);}
-  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
-  .news-card{background:var(--dark);padding:24px;transition:background 0.2s;cursor:pointer;}
-  .news-card:hover{background:var(--surface);}
-  .news-card-top{display:flex;align-items:center;gap:6px;margin-bottom:12px;}
-  .news-card-title{font-size:14px;color:var(--white);line-height:1.5;font-weight:400;margin-bottom:12px;}
+  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+  .news-card{background:var(--white);padding:24px;transition:background 0.2s;cursor:pointer;}
+  .news-card:hover{background:var(--off);}
+  .news-card-top{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+  .news-card-title{font-size:15px;color:var(--text);line-height:1.5;margin-bottom:10px;}
   .news-card-date{font-family:var(--mono);font-size:10px;color:var(--dim);}
-
-  /* ANALYSIS STRIP */
-  .analysis-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
-  .analysis-card{background:var(--surface);padding:28px 24px;cursor:pointer;transition:background 0.2s;}
-  .analysis-card:hover{background:var(--dark);}
-  .analysis-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#e74c3c;margin-bottom:10px;}
-  .analysis-title{font-size:15px;font-weight:500;color:var(--white);line-height:1.4;margin-bottom:10px;letter-spacing:-0.2px;}
-  .analysis-desc{font-size:13px;color:var(--mid);line-height:1.6;font-weight:300;}
-
-  /* SECTOR NEWS */
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
-  .list-col{background:var(--dark);padding:28px;}
-  .list-col-title{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-  .list-item{padding:14px 0;border-bottom:1px solid var(--border);cursor:pointer;}
+  .analysis-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+  .analysis-card{background:var(--off);padding:22px 22px;cursor:pointer;transition:background 0.2s;}
+  .analysis-card:hover{background:var(--white);}
+  .analysis-type{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+  .analysis-title{font-size:17px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:8px;}
+  .analysis-desc{font-size:13px;color:#666666;line-height:1.6;font-weight:300;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:28px;}
+  .list-col{background:var(--white);padding:24px;}
+  .list-col-title{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sub);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  .list-item{padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;}
   .list-item:last-child{border-bottom:none;}
-  .list-item-top{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
-  .list-item-title{font-size:13px;color:var(--text);line-height:1.4;}
-  .list-item-date{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:4px;}
-  .highlights-col{background:var(--surface);padding:28px;}
-  .highlights-title{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888888;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border);}
-  .highlight-item{padding:12px 0;border-bottom:1px solid var(--border);}
+  .list-item-top{display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+  .list-item-title{font-size:14px;color:var(--text);line-height:1.4;}
+  .list-item-date{font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:3px;}
+  .highlights-col{background:var(--off);padding:28px;}
+  .highlights-title{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sub);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  .highlight-item{padding:10px 0;border-bottom:1px solid var(--border);}
   .highlight-item:last-child{border-bottom:none;}
-  .highlight-tag{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:4px;}
+  .highlight-tag{font-family:var(--mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:3px;}
   .highlight-text{font-size:13px;color:var(--text);line-height:1.4;}
-
-  /* FOOTER */
-  footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-logo{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);}
+  .subscribe-box{background:var(--off);border:1px solid var(--border);border-radius:8px;padding:36px;text-align:center;}
+  .subscribe-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);margin-bottom:10px;}
+  .subscribe-title{font-size:28px;font-weight:300;color:var(--text);letter-spacing:-0.5px;margin-bottom:8px;}
+  .subscribe-sub{font-size:14px;color:var(--sub);margin-bottom:28px;font-weight:300;}
+  .subscribe-form{display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto;}
+  .subscribe-form input{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:12px 16px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;text-align:center;}
+  .subscribe-form a{background:var(--black);color:#ffffff;font-size:14px;font-weight:500;padding:13px 24px;border-radius:4px;display:block;text-align:center;transition:background 0.2s;}
+  .subscribe-form a:hover{background:#222222;}
+  footer{background:var(--black);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-logo{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#555555;}
   .footer-links{display:flex;gap:24px;}
-  .footer-links a{font-size:12px;color:var(--dim);text-decoration:none;transition:color 0.2s;}
-  .footer-links a:hover{color:var(--sub);}
-  .footer-copy{font-family:var(--mono);font-size:11px;color:var(--muted);}
-
-  /* RESPONSIVE */
+  .footer-links a{font-size:12px;color:#555555;text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:#888888;}
+  .footer-copy{font-family:var(--mono);font-size:11px;color:#333333;}
   @media(max-width:900px){
     nav{padding:16px 24px;}
-    .page{padding:100px 24px 60px;}
+    .page{padding:80px 24px 48px;}
     .news-lead{grid-template-columns:1fr;}
     .news-grid{grid-template-columns:1fr 1fr;}
     .analysis-strip{grid-template-columns:1fr;}
@@ -137,27 +122,23 @@
 </nav>
 
 <div class="page">
-
-  <!-- HEADER -->
   <div class="page-header">
     <div class="page-eyebrow">GCC Procurement Intelligence</div>
     <div class="page-title">Tender News</div>
     <div class="page-sub">Infrastructure, contract awards, and procurement developments across the Gulf.</div>
   </div>
 
-  <!-- COUNTRY FILTER -->
   <div class="filter-bar">
     <span class="filter-label">Filter</span>
-    <button class="filter-btn active" onclick="filterNews('all')">All</button>
-    <button class="filter-btn" onclick="filterNews('sa')">🇸🇦 Saudi Arabia</button>
-    <button class="filter-btn" onclick="filterNews('ae')">🇦🇪 UAE</button>
-    <button class="filter-btn" onclick="filterNews('om')">🇴🇲 Oman</button>
-    <button class="filter-btn" onclick="filterNews('bh')">🇧🇭 Bahrain</button>
-    <button class="filter-btn" onclick="filterNews('kw')">🇰🇼 Kuwait</button>
-    <button class="filter-btn" onclick="filterNews('qa')">🇶🇦 Qatar</button>
+    <button class="filter-btn active" onclick="setFilter(this)">All</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇸🇦 Saudi Arabia</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇦🇪 UAE</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇴🇲 Oman</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇧🇭 Bahrain</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇰🇼 Kuwait</button>
+    <button class="filter-btn" onclick="setFilter(this)">🇶🇦 Qatar</button>
   </div>
 
-  <!-- LEAD STORY -->
   <div class="news-lead">
     <div class="news-lead-main">
       <div class="news-lead-meta">
@@ -165,7 +146,7 @@
         <span class="news-country">🇸🇦 Saudi Arabia</span>
       </div>
       <div class="news-lead-title">Saudi Arabia Launches NEOM's Largest-Ever Infrastructure Package as Vision 2030 Enters Its Final Phase</div>
-      <p class="news-lead-sub">The Saudi government has issued a sweeping tender package covering road networks, utilities, and smart city infrastructure across the NEOM zone — representing the largest single procurement tranche in the project's history. International contractors have until late June to submit expressions of interest.</p>
+      <p class="news-lead-sub">The Saudi government has issued a sweeping tender package covering road networks, utilities, and smart city infrastructure across the NEOM zone — representing the largest single procurement tranche in the project's history.</p>
       <div class="news-lead-footer">
         <span class="news-date">22 May, 2026</span>
         <span class="news-badge">Exclusive Report</span>
@@ -174,188 +155,72 @@
     <div class="news-lead-sidebar">
       <div class="news-sidebar-label">Also in the news</div>
       <div class="news-sidebar-item">
-        <div class="news-sidebar-item-top">
-          <span class="news-tag-sm">Energy</span>
-          <span class="news-tag-sm">🇦🇪</span>
-        </div>
+        <div class="news-sidebar-item-top"><span class="news-tag-sm">Energy</span><span class="news-country" style="font-size:11px;">🇦🇪</span></div>
         <div class="news-sidebar-title">ADNOC Tenders Upstream Gas Development at Hail & Ghasha Field</div>
       </div>
       <div class="news-sidebar-item">
-        <div class="news-sidebar-item-top">
-          <span class="news-tag-sm">Transport</span>
-          <span class="news-tag-sm">🇶🇦</span>
-        </div>
+        <div class="news-sidebar-item-top"><span class="news-tag-sm">Transport</span><span class="news-country" style="font-size:11px;">🇶🇦</span></div>
         <div class="news-sidebar-title">Qatar Rail Issues Phase 3 Rolling Stock Maintenance Contract</div>
       </div>
       <div class="news-sidebar-item">
-        <div class="news-sidebar-item-top">
-          <span class="news-tag-sm">Defence</span>
-          <span class="news-tag-sm">🇰🇼</span>
-        </div>
+        <div class="news-sidebar-item-top"><span class="news-tag-sm">Defence</span><span class="news-country" style="font-size:11px;">🇰🇼</span></div>
         <div class="news-sidebar-title">Kuwait Ministry of Defence Opens Border Surveillance Tender</div>
       </div>
       <div class="news-sidebar-item">
-        <div class="news-sidebar-item-top">
-          <span class="news-tag-sm">Healthcare</span>
-          <span class="news-tag-sm">🇴🇲</span>
-        </div>
+        <div class="news-sidebar-item-top"><span class="news-tag-sm">Healthcare</span><span class="news-country" style="font-size:11px;">🇴🇲</span></div>
         <div class="news-sidebar-title">Oman Health Ministry Launches Regional Hospital Expansion Package</div>
       </div>
     </div>
   </div>
 
-  <!-- LATEST NEWS GRID -->
   <div class="grid-header">
     <span class="grid-title">Latest News</span>
     <span class="grid-sub">Continuously updated</span>
   </div>
   <div class="news-grid">
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Infrastructure</span>
-        <span class="news-tag-sm">🇦🇪</span>
-      </div>
-      <div class="news-card-title">Abu Dhabi Awards Al Dhafra 2 Desalination Project to International Consortium</div>
-      <div class="news-card-date">21 May, 2026</div>
-    </div>
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Transport</span>
-        <span class="news-tag-sm">🇰🇼</span>
-      </div>
-      <div class="news-card-title">Kuwait Approves Smart Coastal Expressway Linking Shuwaikh to Salmiya</div>
-      <div class="news-card-date">21 May, 2026</div>
-    </div>
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Contract Award</span>
-        <span class="news-tag-sm">🇧🇭</span>
-      </div>
-      <div class="news-card-title">Bahrain EWA Awards Smart Grid and District Cooling Upgrade to Local JV</div>
-      <div class="news-card-date">20 May, 2026</div>
-    </div>
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Renewable Energy</span>
-        <span class="news-tag-sm">🇸🇦</span>
-      </div>
-      <div class="news-card-title">Saudi PIF Subsidiary Issues 800MW Solar Tender Under NEOM Green Hydrogen Initiative</div>
-      <div class="news-card-date">20 May, 2026</div>
-    </div>
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Healthcare</span>
-        <span class="news-tag-sm">🇦🇪</span>
-      </div>
-      <div class="news-card-title">Dubai Health Authority Launches AI Diagnostics Procurement for 12 Public Hospitals</div>
-      <div class="news-card-date">19 May, 2026</div>
-    </div>
-    <div class="news-card">
-      <div class="news-card-top">
-        <span class="news-tag-sm">Water</span>
-        <span class="news-tag-sm">🇴🇲</span>
-      </div>
-      <div class="news-card-title">Oman PAEW Tenders 140km Water Transmission Pipeline Across Interior Governorate</div>
-      <div class="news-card-date">19 May, 2026</div>
-    </div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Infrastructure</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇦🇪</span></div><div class="news-card-title">Abu Dhabi Awards Al Dhafra 2 Desalination Project to International Consortium</div><div class="news-card-date">21 May, 2026</div></div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Transport</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇰🇼</span></div><div class="news-card-title">Kuwait Approves Smart Coastal Expressway Linking Shuwaikh to Salmiya</div><div class="news-card-date">21 May, 2026</div></div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Contract Award</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇧🇭</span></div><div class="news-card-title">Bahrain EWA Awards Smart Grid and District Cooling Upgrade to Local JV</div><div class="news-card-date">20 May, 2026</div></div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Renewable Energy</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇸🇦</span></div><div class="news-card-title">Saudi PIF Subsidiary Issues 800MW Solar Tender Under NEOM Green Hydrogen Initiative</div><div class="news-card-date">20 May, 2026</div></div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Healthcare</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇦🇪</span></div><div class="news-card-title">Dubai Health Authority Launches AI Diagnostics Procurement for 12 Public Hospitals</div><div class="news-card-date">19 May, 2026</div></div>
+    <div class="news-card"><div class="news-card-top"><span class="news-tag-sm">Water</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇴🇲</span></div><div class="news-card-title">Oman PAEW Tenders 140km Water Transmission Pipeline Across Interior Governorate</div><div class="news-card-date">19 May, 2026</div></div>
   </div>
 
-  <!-- ANALYSIS STRIP -->
-  <div class="grid-header">
-    <span class="grid-title">Analysis & Reports</span>
-  </div>
+  <div class="grid-header"><span class="grid-title">Analysis & Reports</span></div>
   <div class="analysis-strip">
-    <div class="analysis-card">
-      <div class="analysis-type">Analysis</div>
-      <div class="analysis-title">Why GCC Procurement Activity Is Accelerating in 2026</div>
-      <div class="analysis-desc">A gap between Vision 2030 targets and delivery timelines is driving a surge in government tendering across the region.</div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-type">Report</div>
-      <div class="analysis-title">Chinese Contractors and Their Growing Footprint in Gulf Infrastructure</div>
-      <div class="analysis-desc">Competitive pricing and state-backed financing are shifting award patterns across Saudi Arabia and Oman.</div>
-    </div>
-    <div class="analysis-card">
-      <div class="analysis-type">Opinion</div>
-      <div class="analysis-title">Green Energy Tenders: Is GCC Supply Meeting Ambition?</div>
-      <div class="analysis-desc">A gap persists between renewable energy targets and the procurement frameworks needed to achieve them.</div>
-    </div>
+    <div class="analysis-card"><div class="analysis-type">Analysis</div><div class="analysis-title">Why GCC Procurement Activity Is Accelerating in 2026</div><div class="analysis-desc">A gap between Vision 2030 targets and delivery timelines is driving a surge in government tendering across the region.</div></div>
+    <div class="analysis-card"><div class="analysis-type">Report</div><div class="analysis-title">Chinese Contractors and Their Growing Footprint in Gulf Infrastructure</div><div class="analysis-desc">Competitive pricing and state-backed financing are shifting award patterns across Saudi Arabia and Oman.</div></div>
+    <div class="analysis-card"><div class="analysis-type">Opinion</div><div class="analysis-title">Green Energy Tenders: Is GCC Supply Meeting Ambition?</div><div class="analysis-desc">A gap persists between renewable energy targets and the procurement frameworks needed to achieve them.</div></div>
   </div>
 
-  <!-- SECTOR NEWS + HIGHLIGHTS -->
-  <div class="grid-header">
-    <span class="grid-title">Sector News</span>
-    <span class="grid-sub">Energy · Transport · Health · Technology</span>
-  </div>
+  <div class="grid-header"><span class="grid-title">Sector News</span><span class="grid-sub">Energy · Transport · Health · Technology</span></div>
   <div class="two-col">
     <div class="list-col">
       <div class="list-col-title">Recent Stories</div>
-      <div class="list-item">
-        <div class="list-item-top">
-          <span class="news-tag-sm">Renewable Energy</span>
-          <span class="news-tag-sm">🇦🇪</span>
-        </div>
-        <div class="list-item-title">UAE Ministry of Energy Issues Expression of Interest for Offshore Wind Pilot</div>
-        <div class="list-item-date">18 May, 2026</div>
-      </div>
-      <div class="list-item">
-        <div class="list-item-top">
-          <span class="news-tag-sm">IT & Technology</span>
-          <span class="news-tag-sm">🇸🇦</span>
-        </div>
-        <div class="list-item-title">Saudi MCIT Launches National AI Infrastructure Procurement Programme</div>
-        <div class="list-item-date">18 May, 2026</div>
-      </div>
-      <div class="list-item">
-        <div class="list-item-top">
-          <span class="news-tag-sm">Construction</span>
-          <span class="news-tag-sm">🇴🇲</span>
-        </div>
-        <div class="list-item-title">Oman Housing Ministry Tenders 4,200 Residential Units Across Three Governorates</div>
-        <div class="list-item-date">17 May, 2026</div>
-      </div>
-      <div class="list-item">
-        <div class="list-item-top">
-          <span class="news-tag-sm">Transport</span>
-          <span class="news-tag-sm">🇧🇭</span>
-        </div>
-        <div class="list-item-title">Bahrain Ministry of Works Opens Bids for Northern Highway Expansion</div>
-        <div class="list-item-date">17 May, 2026</div>
-      </div>
+      <div class="list-item"><div class="list-item-top"><span class="news-tag-sm">Renewable Energy</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇦🇪</span></div><div class="list-item-title">UAE Ministry of Energy Issues Expression of Interest for Offshore Wind Pilot</div><div class="list-item-date">18 May, 2026</div></div>
+      <div class="list-item"><div class="list-item-top"><span class="news-tag-sm">IT & Technology</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇸🇦</span></div><div class="list-item-title">Saudi MCIT Launches National AI Infrastructure Procurement Programme</div><div class="list-item-date">18 May, 2026</div></div>
+      <div class="list-item"><div class="list-item-top"><span class="news-tag-sm">Construction</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇴🇲</span></div><div class="list-item-title">Oman Housing Ministry Tenders 4,200 Residential Units Across Three Governorates</div><div class="list-item-date">17 May, 2026</div></div>
+      <div class="list-item"><div class="list-item-top"><span class="news-tag-sm">Transport</span><span class="news-country" style="font-size:11px;color:var(--sub);">🇧🇭</span></div><div class="list-item-title">Bahrain Ministry of Works Opens Bids for Northern Highway Expansion</div><div class="list-item-date">17 May, 2026</div></div>
     </div>
     <div class="highlights-col">
       <div class="highlights-title">Today's Highlights</div>
-      <div class="highlight-item">
-        <div class="highlight-tag">Policy · 🇸🇦</div>
-        <div class="highlight-text">Saudi Cabinet Approves New Government Procurement Regulations Effective Q3 2026</div>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-tag">Market · 🇦🇪</div>
-        <div class="highlight-text">Abu Dhabi Construction Pipeline Reaches $180bn as Mega-Projects Accelerate</div>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-tag">Award · 🇴🇲</div>
-        <div class="highlight-text">Oman's Duqm Refinery Awards $2.1bn Maintenance Contract to International JV</div>
-      </div>
-      <div class="highlight-item">
-        <div class="highlight-tag">Tender · 🇰🇼</div>
-        <div class="highlight-text">Kuwait Oil Company Issues Largest-Ever IT Infrastructure Tender</div>
-      </div>
+      <div class="highlight-item"><div class="highlight-tag">Policy · 🇸🇦</div><div class="highlight-text">Saudi Cabinet Approves New Government Procurement Regulations Effective Q3 2026</div></div>
+      <div class="highlight-item"><div class="highlight-tag">Market · 🇦🇪</div><div class="highlight-text">Abu Dhabi Construction Pipeline Reaches $180bn as Mega-Projects Accelerate</div></div>
+      <div class="highlight-item"><div class="highlight-tag">Award · 🇴🇲</div><div class="highlight-text">Oman's Duqm Refinery Awards $2.1bn Maintenance Contract to International JV</div></div>
+      <div class="highlight-item"><div class="highlight-tag">Tender · 🇰🇼</div><div class="highlight-text">Kuwait Oil Company Issues Largest-Ever IT Infrastructure Tender</div></div>
     </div>
   </div>
 
-  <!-- EMAIL SUBSCRIBE -->
-  <div style="background:var(--dark);border:1px solid var(--border);border-radius:8px;padding:48px;text-align:center;margin-bottom:0;margin-top:1px;">
-    <div style="font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888888;margin-bottom:12px;">Stay informed</div>
-    <div style="font-size:24px;font-weight:300;color:var(--white);letter-spacing:-0.5px;margin-bottom:8px;">Get the daily GCC tender digest</div>
-    <div style="font-size:14px;color:var(--mid);margin-bottom:32px;font-weight:300;">Thousands of active GCC tenders delivered every morning. 14-day free trial, no card required.</div>
-    <div style="display:flex;flex-direction:column;gap:10px;max-width:440px;margin:0 auto;">
-      <input type="email" placeholder="your@email.com" style="width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:12px 16px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;text-align:center;">
-      <a href="signup.html" style="background:var(--white);color:var(--black);font-size:14px;font-weight:500;padding:14px 24px;border-radius:4px;text-decoration:none;text-align:center;display:block;">Start free trial</a>
+  <div class="subscribe-box">
+    <div class="subscribe-eyebrow">Stay informed</div>
+    <div class="subscribe-title">Get the daily GCC tender digest</div>
+    <div class="subscribe-sub">Thousands of active GCC tenders delivered every morning. 1-month free trial, no card required.</div>
+    <div class="subscribe-form">
+      <input type="email" placeholder="your@email.com">
+      <a href="signup.html">Start free trial</a>
     </div>
   </div>
-
-</div><!-- end .page -->
+</div>
 
 <footer>
   <div class="footer-logo">Despatch</div>
@@ -368,10 +233,9 @@
 </footer>
 
 <script>
-  function filterNews(country) {
+  function setFilter(btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-    // Future: filter cards by country data attribute
+    btn.classList.add('active');
   }
 </script>
 
