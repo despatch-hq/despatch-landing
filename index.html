@@ -228,6 +228,7 @@
   </div>
   <div class="hero-right">
     <div class="digest-preview">
+      <!-- Header -->
       <div class="dp-header">
         <div>
           <div class="dp-logo">Despatch</div>
@@ -239,29 +240,63 @@
           <div class="dp-total-num">2,544</div>
         </div>
       </div>
+
+      <!-- Stat boxes -->
       <div class="dp-stats">
         <div class="dp-stat new"><div class="dp-stat-num">14</div><div class="dp-stat-label">New</div></div>
         <div class="dp-stat crit"><div class="dp-stat-num">97</div><div class="dp-stat-label">Critical</div></div>
         <div class="dp-stat urg"><div class="dp-stat-num">985</div><div class="dp-stat-label">Urgent</div></div>
         <div class="dp-stat norm"><div class="dp-stat-num">1,448</div><div class="dp-stat-label">Normal</div></div>
       </div>
+
+      <!-- Country grid -->
+      <div style="background:var(--white);padding:14px 20px;border-bottom:1px solid var(--border);">
+        <div style="font-family:var(--mono);font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#888888;margin-bottom:10px;">Countries</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;">
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;">
+            <div style="font-size:14px;margin-bottom:3px;">🇸🇦</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">Saudi Arabia</div>
+            <div style="font-family:var(--mono);font-size:13px;color:var(--text);font-weight:600;">1,509</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;">
+            <div style="font-size:14px;margin-bottom:3px;">🇴🇲</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">Oman</div>
+            <div style="font-family:var(--mono);font-size:13px;color:var(--text);font-weight:600;">747</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;">
+            <div style="font-size:14px;margin-bottom:3px;">🇦🇪</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">UAE</div>
+            <div style="font-family:var(--mono);font-size:13px;color:var(--text);font-weight:600;">130</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;">
+            <div style="font-size:14px;margin-bottom:3px;">🇧🇭</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">Bahrain</div>
+            <div style="font-family:var(--mono);font-size:13px;color:var(--text);font-weight:600;">82</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;">
+            <div style="font-size:14px;margin-bottom:3px;">🇰🇼</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">Kuwait</div>
+            <div style="font-family:var(--mono);font-size:13px;color:var(--text);font-weight:600;">50</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:4px;padding:8px 6px;text-align:center;opacity:0.4;">
+            <div style="font-size:14px;margin-bottom:3px;">🇶🇦</div>
+            <div style="font-size:8px;color:#888888;margin-bottom:2px;">Qatar</div>
+            <div style="font-size:9px;color:#aaaaaa;">Coming soon</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sector snapshot -->
       <div class="dp-body">
         <div class="dp-snap-label">Sector Snapshot</div>
         <div class="dp-row"><span class="dp-row-name">Medical</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:88%"></div></div><span class="dp-row-num">410</span></div>
         <div class="dp-row"><span class="dp-row-name">Construction</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:46%"></div></div><span class="dp-row-num">190</span></div>
         <div class="dp-row"><span class="dp-row-name">IT & Technology</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:38%"></div></div><span class="dp-row-num">156</span></div>
         <div class="dp-row"><span class="dp-row-name">MEP & Engineering</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:35%"></div></div><span class="dp-row-num">144</span></div>
+        <div class="dp-row"><span class="dp-row-name">Water & Utilities</span><div class="dp-bar-bg"><div class="dp-bar-fill" style="width:22%"></div></div><span class="dp-row-num">87</span></div>
         <div class="dp-divider"></div>
-        <div class="dp-section-label"><span class="dp-dot"></span>New Tenders</div>
-        <div class="dp-card crit">
-          <div class="dp-card-ref">Ref: 260539005042 &nbsp;·&nbsp; <span class="dp-card-country">🇸🇦 Saudi Arabia</span></div>
-          <div class="dp-card-title">Supply and installation of fire suppression systems for government complex</div>
-          <div class="dp-card-closes">Closes: 25 May, 2026 (in 2 days)</div>
-        </div>
-        <div class="dp-card">
-          <div class="dp-card-ref">Ref: 74/2026/EA/HQ-15 &nbsp;·&nbsp; <span class="dp-card-country">🇴🇲 Oman</span></div>
-          <div class="dp-card-title">Provision of cleaning and facilities management services</div>
-          <div class="dp-card-closes amber">Closes: 28 May, 2026 (in 5 days)</div>
+        <div style="font-size:10px;color:#aaaaaa;font-family:var(--mono);text-align:center;padding:2px 0 4px;">
+          <span style="color:var(--red);font-weight:600;">Critical</span> = closes within 3 days &nbsp;·&nbsp; <span style="color:var(--amber);font-weight:600;">Urgent</span> = closes by 31 May
         </div>
       </div>
     </div>
@@ -346,13 +381,68 @@
         <div class="sd-total-num">2,544</div>
       </div>
     </div>
-    <div class="sd-stats">
-      <div class="sd-stat new"><div class="sd-stat-num">14</div><div class="sd-stat-label">New</div></div>
-      <div class="sd-stat crit"><div class="sd-stat-num">97</div><div class="sd-stat-label">Critical</div></div>
-      <div class="sd-stat urg"><div class="sd-stat-num">985</div><div class="sd-stat-label">Urgent</div></div>
-      <div class="sd-stat norm"><div class="sd-stat-num">1,448</div><div class="sd-stat-label">Normal</div></div>
+    <div style="background:var(--black);padding:14px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-bottom:1px solid #1a1a1a;">
+      <div style="background:#111111;border:0.5px solid #2a2a2a;border-radius:5px;padding:10px 6px;text-align:center;">
+        <div style="font-family:var(--mono);font-size:18px;color:#27ae60;margin-bottom:3px;">14</div>
+        <div style="font-family:var(--mono);font-size:8px;color:#555555;letter-spacing:1.5px;text-transform:uppercase;">New</div>
+      </div>
+      <div style="background:#1a0808;border:0.5px solid #3a1010;border-radius:5px;padding:10px 6px;text-align:center;">
+        <div style="font-family:var(--mono);font-size:18px;color:#e74c3c;margin-bottom:3px;">97</div>
+        <div style="font-family:var(--mono);font-size:8px;color:#666666;letter-spacing:1.5px;text-transform:uppercase;">Critical</div>
+      </div>
+      <div style="background:#160d00;border:0.5px solid #3a2500;border-radius:5px;padding:10px 6px;text-align:center;">
+        <div style="font-family:var(--mono);font-size:18px;color:#e67e22;margin-bottom:3px;">985</div>
+        <div style="font-family:var(--mono);font-size:8px;color:#666666;letter-spacing:1.5px;text-transform:uppercase;">Urgent</div>
+      </div>
+      <div style="background:#111111;border:0.5px solid #2a2a2a;border-radius:5px;padding:10px 6px;text-align:center;">
+        <div style="font-family:var(--mono);font-size:18px;color:#555555;margin-bottom:3px;">1,448</div>
+        <div style="font-family:var(--mono);font-size:8px;color:#555555;letter-spacing:1.5px;text-transform:uppercase;">Normal</div>
+      </div>
+    </div>
+    <div style="background:var(--black);padding:10px 32px 16px;border-bottom:1px solid #1a1a1a;">
+      <div style="font-size:10px;color:#555555;font-family:var(--mono);text-align:center;">
+        <span style="color:#e74c3c;font-weight:600;">Critical</span> = closes within 3 days &nbsp;·&nbsp; <span style="color:#e67e22;font-weight:600;">Urgent</span> = closes by 31 May, 2026
+      </div>
     </div>
     <div class="sd-body">
+      <!-- COUNTRIES -->
+      <div style="margin-bottom:18px;">
+        <div class="sd-snap-label">Countries</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;">
+            <div style="font-size:18px;margin-bottom:4px;">🇸🇦</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">Saudi Arabia</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);">1,509</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;">
+            <div style="font-size:18px;margin-bottom:4px;">🇴🇲</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">Oman</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);">747</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;">
+            <div style="font-size:18px;margin-bottom:4px;">🇦🇪</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">UAE</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);">130</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;">
+            <div style="font-size:18px;margin-bottom:4px;">🇧🇭</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">Bahrain</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);">82</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;">
+            <div style="font-size:18px;margin-bottom:4px;">🇰🇼</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">Kuwait</div>
+            <div style="font-family:var(--mono);font-size:16px;font-weight:600;color:var(--text);">50</div>
+          </div>
+          <div style="background:var(--off);border:1px solid var(--border);border-radius:6px;padding:12px 8px;text-align:center;opacity:0.4;">
+            <div style="font-size:18px;margin-bottom:4px;">🇶🇦</div>
+            <div style="font-size:10px;color:#777777;margin-bottom:4px;">Qatar</div>
+            <div style="font-size:9px;color:#999999;">Coming soon</div>
+          </div>
+        </div>
+      </div>
+      <div style="height:1px;background:var(--border);margin-bottom:18px;"></div>
+
       <div class="sd-snap-label">Sector Snapshot</div>
       <div class="sd-row"><span class="sd-row-name">Medical & Healthcare</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:88%"></div></div><span class="sd-row-num">410</span></div>
       <div class="sd-row"><span class="sd-row-name">Construction</span><div class="sd-bar-bg"><div class="sd-bar-fill" style="width:46%"></div></div><span class="sd-row-num">190</span></div>
