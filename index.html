@@ -167,8 +167,8 @@
   .ea-title { font-size: 30px; font-weight: 300; color: var(--text); letter-spacing: -0.5px; margin-bottom: 10px; }
   .ea-desc { font-size: 14px; color: #555555; line-height: 1.7; max-width: 460px; font-weight: 300; }
   .ea-action { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
-  .ea-action .btn-primary { display: block; }
-  .ea-note { font-family: var(--mono); font-size: 10px; color: #666666; }
+  .ea-action .btn-primary { display: block; text-align: center; }
+  .ea-note { font-family: var(--mono); font-size: 10px; color: #666666; text-align: center; width: 100%; display: block; }
 
   /* FOOTER */
   footer { background: var(--black); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -193,7 +193,7 @@
     .how-grid{grid-template-columns:1fr;}
     .section{padding:52px 24px;}
     .early-access{padding:36px 28px;flex-direction:column;}
-    .ea-action{text-align:left;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;}
+    .ea-action{text-align:left;width:100%;display:flex;flex-direction:column;align-items:stretch;gap:8px;}
     .sd-stats{grid-template-columns:repeat(2,1fr);}
     footer{padding:24px;flex-direction:column;align-items:flex-start;}
   }
@@ -226,7 +226,7 @@
       <span class="btn-note">1 month free · no card required</span>
     </div>
   </div>
-  <div class="hero-right">
+  <div class="hero-right" style="padding-top:24px;">
     <div class="digest-preview">
       <!-- Header -->
       <div class="dp-header">
@@ -498,7 +498,7 @@
     </div>
     <div class="ea-action">
       <a href="signup.html" class="btn-primary">Start 1-month free trial</a>
-      <div class="ea-note">no card required · cancel anytime</div>
+      <div class="ea-note" style="text-align:right;">no card required · cancel anytime</div>
     </div>
   </div>
 </section>
