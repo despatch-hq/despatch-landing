@@ -14,9 +14,9 @@
     --text:#1a1a1a;--sub:#666666;--dim:#999999;
     --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
   }
-  body { background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased; }
+  body { background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:66px; }
   a { text-decoration:none;color:inherit; }
-  nav { background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:22px 48px; }
+  nav { background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:22px 48px;position:fixed;top:0;left:0;right:0;z-index:100; }
   .logo { font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff; }
   .nav-back { font-size:13px;color:#aaaaaa;transition:color 0.2s; }
   .nav-back:hover { color:#ffffff; }
