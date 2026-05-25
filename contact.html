@@ -16,6 +16,11 @@
   }
   body { background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column; }
   a { text-decoration:none;color:inherit; }
+
+  /* Force emoji rendering on all devices including Windows */
+  .emoji, [data-emoji] {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  }
   nav { background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:20px 48px; }
   .logo { font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff; }
   .nav-right { display:flex;align-items:center;gap:8px; }
@@ -85,13 +90,13 @@
 
     <div class="contact-options">
       <div class="contact-card">
-        <div class="contact-card-icon">✉️</div>
+        <div class="contact-card-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✉️</span></div>
         <div class="contact-card-title">Email us directly</div>
         <div class="contact-card-desc">For subscription questions, trial requests, or general enquiries.</div>
         <a href="mailto:despatch.hq@gmail.com" class="contact-card-link">despatch.hq@gmail.com</a>
       </div>
       <div class="contact-card">
-        <div class="contact-card-icon">🚀</div>
+        <div class="contact-card-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">🚀</span></div>
         <div class="contact-card-title">Start a free trial</div>
         <div class="contact-card-desc">1 month free, full access, no card required. Get started in minutes.</div>
         <a href="signup.html" class="contact-card-link">Sign up now →</a>
@@ -133,7 +138,7 @@
         </form>
       </div>
       <div class="success" id="success-view">
-        <div class="success-icon">✅</div>
+        <div class="success-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✅</span></div>
         <div class="success-title">Message received</div>
         <div class="success-sub">Thanks for reaching out. We'll get back to you within 24 hours.</div>
       </div>

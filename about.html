@@ -16,6 +16,11 @@
   }
   body { background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased; }
   a { text-decoration:none;color:inherit; }
+
+  /* Force emoji rendering on all devices including Windows */
+  .emoji, [data-emoji] {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+  }
   nav { background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:20px 48px;position:fixed;top:0;left:0;right:0;z-index:100; }
   .logo { font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff; }
   .nav-right { display:flex;align-items:center;gap:8px; }
