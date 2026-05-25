@@ -29,6 +29,17 @@
   body { background: var(--white); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   a { text-decoration: none; color: inherit; }
 
+
+  .flag-emoji {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    font-style: normal;
+    display: inline-block;
+    line-height: 1;
+  }
+  .flag-emoji.block {
+    display: block;
+    text-align: center;
+  }
   /* NAV */
   nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
   .logo { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; }
@@ -337,12 +348,12 @@
 <section class="section fade-up">
   <div class="section-label">Countries covered</div>
   <div class="countries-grid">
-    <div class="country-card"><img src="https://flagcdn.com/48x36/sa.png" alt="Saudi Arabia" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
-    <div class="country-card"><img src="https://flagcdn.com/48x36/om.png" alt="Oman" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">Oman</div><div class="country-count">754</div></div>
-    <div class="country-card"><img src="https://flagcdn.com/48x36/ae.png" alt="UAE" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">UAE</div><div class="country-count">122</div></div>
-    <div class="country-card"><img src="https://flagcdn.com/48x36/bh.png" alt="Bahrain" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">Bahrain</div><div class="country-count">82</div></div>
-    <div class="country-card"><img src="https://flagcdn.com/48x36/kw.png" alt="Kuwait" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
-    <div class="country-card faded"><img src="https://flagcdn.com/48x36/qa.png" alt="Qatar" style="height:28px;margin-bottom:10px;display:block;margin-left:auto;margin-right:auto;"><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--sub);">Coming soon</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇸🇦</span><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇴🇲</span><div class="country-name">Oman</div><div class="country-count">754</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇦🇪</span><div class="country-name">UAE</div><div class="country-count">122</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">82</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇰🇼</span><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
+    <div class="country-card faded"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--sub);">Coming soon</div></div>
   </div>
 </section>
 
@@ -412,32 +423,32 @@
         <div class="sd-snap-label">Countries</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:16px;">
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;">
-            <img src="https://flagcdn.com/24x18/sa.png" alt="Saudi Arabia" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇸🇦</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">Saudi Arabia</div>
             <div style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);">1,509</div>
           </div>
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;">
-            <img src="https://flagcdn.com/24x18/om.png" alt="Oman" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇴🇲</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">Oman</div>
             <div style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);">747</div>
           </div>
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;">
-            <img src="https://flagcdn.com/24x18/ae.png" alt="UAE" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇦🇪</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">UAE</div>
             <div style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);">130</div>
           </div>
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;">
-            <img src="https://flagcdn.com/24x18/bh.png" alt="Bahrain" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇧🇭</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">Bahrain</div>
             <div style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);">82</div>
           </div>
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;">
-            <img src="https://flagcdn.com/24x18/kw.png" alt="Kuwait" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇰🇼</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">Kuwait</div>
             <div style="font-family:var(--mono);font-size:14px;font-weight:600;color:var(--text);">50</div>
           </div>
           <div style="background:var(--off);border:1px solid var(--border);border-radius:5px;padding:10px 6px;text-align:center;opacity:0.4;">
-            <img src="https://flagcdn.com/24x18/qa.png" alt="Qatar" style="height:13px;margin-bottom:4px;display:block;margin-left:auto;margin-right:auto;">
+            <span class="flag-emoji block" style="font-size:14px;margin-bottom:4px;">🇶🇦</span>
             <div style="font-size:9px;color:#777777;margin-bottom:3px;">Qatar</div>
             <div style="font-size:9px;color:#aaaaaa;">Coming soon</div>
           </div>
@@ -467,7 +478,7 @@
         <div class="sd-card" style="background:var(--white);">
           <div class="sd-card-top">
             <span class="sd-card-ref">Ref: 260539005042</span>
-            <span class="sd-card-country"><img src="https://flagcdn.com/16x12/sa.png" alt="" style="height:11px;vertical-align:middle;margin-right:4px;">Saudi Arabia</span>
+            <span class="sd-card-country"><span class="flag-emoji" style="font-size:13px;vertical-align:middle;margin-right:4px;">🇸🇦</span>Saudi Arabia</span>
           </div>
           <div class="sd-card-title">Supply and installation of fire suppression systems for government complex</div>
           <div class="sd-card-auth">Ministry of Finance</div>
@@ -478,7 +489,7 @@
         <div class="sd-card amber" style="background:var(--white);">
           <div class="sd-card-top">
             <span class="sd-card-ref">Ref: 74/2026/EA/HQ-15</span>
-            <span class="sd-card-country"><img src="https://flagcdn.com/16x12/om.png" alt="" style="height:11px;vertical-align:middle;margin-right:4px;">Oman</span>
+            <span class="sd-card-country"><span class="flag-emoji" style="font-size:13px;vertical-align:middle;margin-right:4px;">🇴🇲</span>Oman</span>
           </div>
           <div class="sd-card-title">Provision of cleaning and facilities management services for Ministry buildings</div>
           <div class="sd-card-auth">Environment Authority</div>
@@ -488,7 +499,7 @@
         <div class="sd-card amber" style="background:var(--white);">
           <div class="sd-card-top">
             <span class="sd-card-ref">Ref: BMD-25/0022</span>
-            <span class="sd-card-country"><img src="https://flagcdn.com/16x12/bh.png" alt="" style="height:11px;vertical-align:middle;margin-right:4px;">Bahrain</span>
+            <span class="sd-card-country"><span class="flag-emoji" style="font-size:13px;vertical-align:middle;margin-right:4px;">🇧🇭</span>Bahrain</span>
           </div>
           <div class="sd-card-title">Annual maintenance contract for HVAC systems across Ministry buildings</div>
           <div class="sd-card-auth">Ministry of Works</div>
