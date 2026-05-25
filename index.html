@@ -117,6 +117,19 @@
   .stat-num { font-family: var(--mono); font-size: 38px; color: var(--text); margin-bottom: 6px; letter-spacing: -1px; }
   .stat-label { font-family: var(--mono); font-size: 11px; color: #777777; letter-spacing: 1.5px; text-transform: uppercase; }
 
+  /* STATS GRID */
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--border-radius,8px);overflow:hidden;margin:52px 0;}
+  .stat-cell{background:var(--white);padding:36px 40px;}
+  .stat-num{font-family:var(--mono);font-size:40px;color:var(--text);margin-bottom:8px;letter-spacing:-1px;}
+  .stat-label{font-family:var(--mono);font-size:11px;color:#777777;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+  .stat-sub{font-size:13px;color:#666666;line-height:1.6;}
+  /* STATS GRID */
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 52px 0; }
+  .stat-cell { background: var(--white); padding: 36px 40px; }
+  .stat-num { font-family: var(--mono); font-size: 40px; color: var(--text); margin-bottom: 8px; letter-spacing: -1px; }
+  .stat-label { font-family: var(--mono); font-size: 11px; color: #777777; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .stat-sub { font-size: 13px; color: #666666; line-height: 1.6; }
+
   /* SECTIONS */
   .section { padding: 52px 48px; border-bottom: 1px solid var(--border); }
   .section-label { font-family: var(--mono); font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: #666666; margin-bottom: 36px; }
@@ -203,8 +216,8 @@
     nav{padding:16px 24px;}
     .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:48px;}
     .hero-right{display:none;}
-    .stats{grid-template-columns:1fr 1fr;}
-    .stat{border-bottom:1px solid var(--border);}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .stat-cell{border-bottom:1px solid var(--border);}
     .countries-grid{grid-template-columns:1fr 1fr;}
     .how-grid{grid-template-columns:1fr;}
     .section{padding:52px 24px;}
@@ -215,7 +228,7 @@
   }
   @media(max-width:600px){
     .countries-grid{grid-template-columns:1fr 1fr;}
-    .stats{grid-template-columns:1fr 1fr;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
   }
 </style>
 </head>
@@ -321,30 +334,30 @@
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker">
-    <span class="ticker-item"><span class="ticker-dot"></span>Bahrain Tender Board</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Oman eTendering</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Kuwait CAPT</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Abu Dhabi ADGPG</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>UAE Federal MOF</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Saudi Etimad</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Bahrain Tender Board</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Oman eTendering</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Kuwait CAPT</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Abu Dhabi ADGPG</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>UAE Federal MOF</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Saudi Etimad</span>
+<!-- STATS -->
+<div style="max-width:1200px;margin:0 auto;padding:0 80px;">
+<div class="stats-grid fade-up">
+  <div class="stat-cell">
+    <div class="stat-num">2,500+</div>
+    <div class="stat-label">Daily tenders</div>
+    <div class="stat-sub">Active government contracts across the GCC, refreshed every morning.</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">5</div>
+    <div class="stat-label">GCC countries</div>
+    <div class="stat-sub">Bahrain, Oman, Kuwait, UAE, and Saudi Arabia. Qatar coming soon.</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">17</div>
+    <div class="stat-label">Sectors tracked</div>
+    <div class="stat-sub">From medical and construction to IT, oil & gas, and education.</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">Daily</div>
+    <div class="stat-label">Delivery</div>
+    <div class="stat-sub">A curated digest delivered directly to your inbox — new listings flagged, urgent deadlines highlighted.</div>
   </div>
 </div>
-
-<!-- STATS -->
-<div class="stats fade-up">
-  <div class="stat"><div class="stat-num">2,500+</div><div class="stat-label">Daily tenders</div></div>
-  <div class="stat"><div class="stat-num">5</div><div class="stat-label">GCC countries</div></div>
-  <div class="stat"><div class="stat-num">17</div><div class="stat-label">Sectors tracked</div></div>
-  <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Delivery</div></div>
 </div>
 
 <div style="max-width:1200px;margin:0 auto;">
