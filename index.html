@@ -65,7 +65,7 @@
   .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
   .btn-primary { display: inline-block; background: var(--black); color: #ffffff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 4px; transition: all 0.2s; }
   .btn-primary:hover { background: #222222; }
-  .btn-note { font-family: var(--mono); font-size: 11px; color: #666666; }
+  .btn-note { font-family: var(--mono); font-size: 11px; color: #aaaaaa; }
 
   /* DIGEST PREVIEW */
   .digest-preview { background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04); max-width: 540px; margin-left: auto; margin-right: 8px; }
@@ -82,7 +82,7 @@
   .dp-stat.new .dp-stat-num { color: var(--green); }
   .dp-stat.crit .dp-stat-num { color: var(--red); }
   .dp-stat.urg .dp-stat-num { color: var(--amber); }
-  .dp-stat.norm .dp-stat-num { color: #555555; }
+  .dp-stat.norm .dp-stat-num { color: #aaaaaa; }
   .dp-body { background: var(--white); padding: 16px 24px 20px; }
   .dp-snap-label { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 12px; }
   .dp-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
@@ -165,7 +165,7 @@
   .sd-stat.new .sd-stat-num { color: var(--green); }
   .sd-stat.crit .sd-stat-num { color: var(--red); }
   .sd-stat.urg .sd-stat-num { color: var(--amber); }
-  .sd-stat.norm .sd-stat-num { color: #555555; }
+  .sd-stat.norm .sd-stat-num { color: #aaaaaa; }
   .sd-body { background: var(--white); padding: 18px 28px; }
   .sd-snap-label { font-family: var(--mono); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--sub); margin-bottom: 14px; }
   .sd-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
@@ -201,11 +201,11 @@
 
   /* FOOTER */
   footer { background: var(--black); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .footer-logo { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #888888; }
+  .footer-logo { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #aaaaaa; }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { font-size: 12px; color: #888888; transition: color 0.2s; }
-  .footer-links a:hover { color: #888888; }
-  .footer-copy { font-family: var(--mono); font-size: 11px; color: #666666; }
+  .footer-links a:hover { color: #aaaaaa; }
+  .footer-copy { font-family: var(--mono); font-size: 11px; color: #aaaaaa; }
 
   /* FADE UP */
   .fade-up { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
@@ -585,8 +585,9 @@
 <footer>
   <div class="footer-logo">Despatch</div>
   <div class="footer-links">
-    <a href="mailto:despatch.hq@gmail.com">Contact</a>
-    <a href="signup.html">Start trial</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:despatch.hq@gmail.com?subject=Unsubscribe">Unsubscribe</a>
   </div>
   <div class="footer-copy">© 2026 Despatch</div>
 </footer>
