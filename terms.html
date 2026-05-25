@@ -18,8 +18,6 @@
   a { text-decoration:none;color:inherit; }
   nav { background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:22px 48px;position:fixed;top:0;left:0;right:0;position:fixed;top:0;left:0;right:0;z-index:100; }
   .logo { font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff; }
-  .nav-back { font-size:14px;color:#aaaaaa;transition:color 0.2s; }
-  .nav-back:hover { color:#ffffff; }
   .page { max-width:720px;margin:0 auto;padding:80px 48px 48px; }
   .page-eyebrow { font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:12px; }
   .page-title { font-size:clamp(28px,4vw,40px);font-weight:300;color:var(--text);letter-spacing:-0.8px;margin-bottom:8px; }
@@ -45,7 +43,9 @@
 
 <nav>
   <a href="index.html" class="logo">Despatch</a>
-  <a href="index.html" class="nav-back">← Back</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link">← Back</a>
+  </div>
 </nav>
 
 <div class="page">

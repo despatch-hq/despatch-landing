@@ -19,8 +19,6 @@
   a{text-decoration:none;color:inherit;}
   nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:22px 48px;position:fixed;top:0;left:0;right:0;position:fixed;top:0;left:0;right:0;z-index:100;}
   .logo{font-family:var(--mono);font-size:14px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#ffffff;}
-  .nav-back{font-size:14px;color:#666666;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
-  .nav-back:hover{color:#ffffff;}
   .main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 24px;background:var(--off);}
   .card{width:100%;max-width:560px;background:var(--white);border:1px solid var(--border);border-radius:8px;padding:40px;}
   .card-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sub);margin-bottom:12px;}
@@ -65,7 +63,9 @@
 
 <nav>
   <a href="index.html" class="logo">Despatch</a>
-  <a href="index.html" class="nav-back">← Back</a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-link">← Back</a>
+  </div>
 </nav>
 
 <div class="main">
