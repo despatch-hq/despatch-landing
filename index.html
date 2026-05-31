@@ -142,7 +142,7 @@
 
   /* COUNTRIES */
   .countries-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .country-card { background: var(--off); padding: 32px 20px; text-align: center; transition: background 0.2s; }
+  .country-card { background: var(--off); padding: 32px 20px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: background 0.2s; }
   .country-card:hover { background: var(--off); }
   .country-card.faded { opacity: 0.4; }
   .flag { font-size: 26px; display: block; margin-bottom: 10px; }
@@ -586,7 +586,7 @@
     </div>
     <div style="background:var(--off);padding:24px 22px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
-        <div style="width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;"></div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#999999;flex-shrink:0;"></div>
         <div style="font-size:13px;font-weight:600;color:var(--text);">Normal</div>
       </div>
       <div style="font-size:13px;color:#444444;line-height:1.7;">Active tenders with more than 7 days remaining. Monitor these and plan ahead for upcoming deadlines.</div>
