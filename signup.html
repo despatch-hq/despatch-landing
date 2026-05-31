@@ -15,7 +15,8 @@
     --text:#1a1a1a; --sub:#666666; --dim:#999999; --amber:#e67e22; --green:#27ae60;
     --mono:'DM Mono',monospace; --sans:'DM Sans',sans-serif;
   }
-  /* NAV */
+
+  /* NAV — identical to all other pages */
   nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
   .logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; text-decoration: none; }
   .nav-right { display: flex; align-items: center; gap: 24px; }
@@ -23,57 +24,85 @@
   .nav-link:hover { color: #ffffff; }
   .nav-cta { font-size: 14px; color: #888888; border: 1px solid #2a2a2a; padding: 8px 20px; border-radius: 4px; transition: all 0.2s; white-space: nowrap; text-decoration: none; }
   .nav-cta:hover { border-color: #555555; color: #ffffff; }
+
   /* BODY */
-  body { background: var(--white); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; padding-top: 66px; }
+  body { background: var(--white); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
   a { text-decoration: none; color: inherit; }
-  /* LAYOUT */
-  .main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 24px; background: var(--off); }
-  .card { width: 100%; max-width: 560px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 40px; }
-  .card-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sub); margin-bottom: 12px; }
-  .card-title { font-size: 32px; font-weight: 300; color: var(--text); letter-spacing: -0.5px; margin-bottom: 6px; }
-  .card-sub { font-size: 14px; color: #555555; margin-bottom: 32px; font-weight: 300; line-height: 1.6; }
-  /* FORM */
-  .form { display: flex; flex-direction: column; gap: 16px; }
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  label { font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaaaaa; }
-  input, select, textarea { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 11px 14px; font-family: var(--sans); font-size: 14px; color: var(--text); outline: none; transition: border-color 0.2s; width: 100%; -webkit-appearance: none; appearance: none; }
-  input::placeholder, textarea::placeholder { color: var(--dim); }
-  input:focus, select:focus, textarea:focus { border-color: var(--text); }
-  select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; background-color: var(--white); }
+
+  /* PAGE — identical to about/contact */
+  .page { max-width: 760px; margin: 0 auto; padding: 140px 40px 80px; flex: 1; width: 100%; }
+
+  /* HEADER */
+  .page-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: #666666; margin-bottom: 16px; margin-top: 8px; }
+  .page-title { font-size: clamp(30px,3.5vw,42px); font-weight: 300; color: var(--text); letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 12px; }
+  .page-sub { font-size: 16px; color: #444444; line-height: 1.75; font-weight: 300; margin-bottom: 40px; }
+
+  /* FORM SECTIONS */
+  .form { display: flex; flex-direction: column; gap: 20px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #666666; }
+  input, select, textarea {
+    background: var(--white); border: 1px solid var(--border); border-radius: 4px;
+    padding: 12px 14px; font-family: var(--sans); font-size: 15px; color: var(--text);
+    outline: none; transition: border-color 0.2s; width: 100%;
+    -webkit-appearance: none; appearance: none;
+  }
+  input::placeholder, textarea::placeholder { color: #aaaaaa; }
+  input:focus, select:focus, textarea:focus { border-color: #888888; }
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 36px; background-color: var(--white);
+  }
   select option { background: var(--white); color: var(--text); }
-  .divider { height: 1px; background: var(--border); margin: 4px 0; }
-  .trial-note { background: var(--off); border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; display: flex; align-items: flex-start; gap: 12px; }
-  .trial-note-text { font-size: 13px; color: #555555; line-height: 1.6; }
-  .trial-note-text strong { color: var(--text); font-weight: 500; }
-  .btn-submit { background: var(--black); color: #ffffff; font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s; width: 100%; margin-top: 4px; }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+  /* LAUNCH NOTE */
+  .trial-note { background: var(--off); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; }
+  .trial-note-text { font-size: 14px; color: #444444; line-height: 1.7; }
+  .trial-note-text strong { color: var(--text); font-weight: 600; }
+
+  /* SUBMIT */
+  .btn-submit {
+    background: var(--black); color: #ffffff; font-family: var(--sans);
+    font-size: 15px; font-weight: 500; padding: 15px 32px; border-radius: 4px;
+    border: none; cursor: pointer; transition: background 0.2s; width: 100%; margin-top: 4px;
+  }
   .btn-submit:hover { background: #222222; }
   .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
   /* SUCCESS */
-  .success { display: none; text-align: center; padding: 40px 20px; }
-  .success-icon { font-size: 36px; margin-bottom: 16px; }
-  .success-title { font-size: 22px; font-weight: 300; color: var(--text); margin-bottom: 10px; letter-spacing: -0.3px; }
-  .success-sub { font-size: 14px; color: var(--sub); line-height: 1.6; margin-bottom: 24px; }
+  .success { display: none; text-align: center; padding: 60px 20px; }
+  .success-icon { font-size: 40px; margin-bottom: 20px; }
+  .success-title { font-size: 26px; font-weight: 300; color: var(--text); margin-bottom: 12px; letter-spacing: -0.3px; }
+  .success-sub { font-size: 15px; color: #444444; line-height: 1.7; margin-bottom: 28px; }
   .success-back { font-size: 13px; color: var(--sub); font-family: var(--mono); letter-spacing: 1px; }
   .success-back:hover { color: var(--text); }
-  /* FOOTER */
-  footer { background: var(--black); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-  .footer-logo { font-family: var(--mono); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #aaaaaa; }
-  .footer-copy { font-family: var(--mono); font-size: 11px; color: #888888; }
-  /* MOBILE */
+
+  /* FOOTER — identical to about/contact */
+  footer { background: var(--black); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #888888; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 12px; color: #888888; transition: color 0.2s; }
+  .footer-links a:hover { color: #bbbbbb; }
+  .footer-copy { font-family: var(--mono); font-size: 11px; color: #666666; }
+
+  /* MOBILE — identical breakpoints to about/contact */
   @media(max-width:900px) {
     nav { padding: 14px 16px; }
     .nav-link { font-size: 12px; padding: 6px 0; }
     .nav-cta { font-size: 12px; padding: 6px 14px; white-space: nowrap; }
     .nav-right { gap: 24px; }
-    body { padding-top: 50px; }
-    .main { padding: 60px 16px 40px; }
-    .card { padding: 28px 20px; }
+    .page { padding: 120px 28px 60px; }
     footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
   }
   @media(max-width:600px) {
     .nav-right { gap: 24px; }
-    .main { padding: 48px 16px 40px; }
+    .page { padding: 100px 20px 60px; }
     .field-row { grid-template-columns: 1fr; }
   }
 </style>
@@ -89,84 +118,113 @@
   </div>
 </nav>
 
-<div class="main">
-  <div class="card">
-    <div id="form-view">
-      <div class="card-eyebrow">Free Trial</div>
-      <div class="card-title">Start your free trial</div>
-      <div class="card-sub">No card required. Full access from day one — 2,500+ tenders daily across the GCC.</div>
+<div class="page">
+  <div id="form-view">
+    <div class="page-eyebrow">Free Trial</div>
+    <div class="page-title">Start your free trial</div>
+    <p class="page-sub">No card required. Full access from day one — 2,500+ active tenders across the GCC, delivered to your inbox every morning.</p>
 
-      <form class="form" id="signup-form" action="https://formspree.io/f/mojbdqry" method="POST">
-        <div class="field-row">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
-          </div>
-          <div class="field">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" placeholder="Company name">
-          </div>
+    <form class="form" id="signup-form" action="https://formspree.io/f/mojbdqry" method="POST">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
         </div>
         <div class="field">
-          <label for="email">Work email</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name">
         </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      </div>
+
+      <div class="field">
+        <label for="whatsapp">WhatsApp number</label>
+        <input type="tel" id="whatsapp" name="whatsapp" placeholder="+973 12345678">
+      </div>
+
+      <div class="field-row">
         <div class="field">
-          <label for="whatsapp">WhatsApp number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="+973 12345678">
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="region">Region</label>
-            <select id="region" name="region" required>
-              <option value="" disabled selected>Select country</option>
-              <option>Bahrain</option><option>Saudi Arabia</option><option>UAE</option>
-              <option>Oman</option><option>Kuwait</option><option>Qatar</option><option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="sector">Primary sector</label>
-            <select id="sector" name="sector">
-              <option value="" disabled selected>Select sector</option>
-              <option>Medical & Healthcare</option><option>Construction & Civil</option>
-              <option>IT & Technology</option><option>MEP & Engineering</option>
-              <option>Security</option><option>Cleaning & Facilities</option>
-              <option>Catering & Food Services</option><option>Water & Utilities</option>
-              <option>Oil & Gas</option><option>Landscaping</option>
-              <option>Transport & Logistics</option><option>Consultancy & Advisory</option>
-              <option>Furniture & Fit-Out</option><option>Events & Marketing</option>
-              <option>Education & Training</option><option>Printing & Stationery</option>
-              <option>Sports & Recreation</option><option>All sectors</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="source">How did you hear about Despatch?</label>
-          <select id="source" name="source">
-            <option value="" disabled selected>Select one</option>
-            <option>LinkedIn</option><option>Word of mouth</option>
-            <option>Google search</option><option>WhatsApp</option><option>Other</option>
+          <label for="region">Region</label>
+          <select id="region" name="region" required>
+            <option value="" disabled selected>Select country</option>
+            <option>Bahrain</option>
+            <option>Saudi Arabia</option>
+            <option>UAE</option>
+            <option>Oman</option>
+            <option>Kuwait</option>
+            <option>Qatar</option>
+            <option>Other</option>
           </select>
         </div>
-        <div class="divider"></div>
-        <div class="trial-note">
-            <div class="trial-note-text"><strong>Launch pricing available for the first 20 subscribers.</strong> Starting your trial now locks in your rate. No card required — you'll hear from us within 24 hours to get started.</div>
+        <div class="field">
+          <label for="sector">Primary sector</label>
+          <select id="sector" name="sector">
+            <option value="" disabled selected>Select sector</option>
+            <option>Medical & Healthcare</option>
+            <option>Construction & Civil</option>
+            <option>IT & Technology</option>
+            <option>MEP & Engineering</option>
+            <option>Security</option>
+            <option>Cleaning & Facilities</option>
+            <option>Catering & Food Services</option>
+            <option>Water & Utilities</option>
+            <option>Oil & Gas</option>
+            <option>Landscaping</option>
+            <option>Transport & Logistics</option>
+            <option>Consultancy & Advisory</option>
+            <option>Furniture & Fit-Out</option>
+            <option>Events & Marketing</option>
+            <option>Education & Training</option>
+            <option>Printing & Stationery</option>
+            <option>Sports & Recreation</option>
+            <option>All sectors</option>
+          </select>
         </div>
-        <button type="submit" class="btn-submit" id="submit-btn">Start free trial</button>
-      </form>
-    </div>
+      </div>
 
-    <div class="success" id="success-view">
-      <div class="success-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✅</span></div>
-      <div class="success-title">You're on the list</div>
-      <div class="success-sub">Thanks for signing up. We'll be in touch within 24 hours to get your trial started.</div>
-      <a href="index.html" class="success-back">← Back to Despatch</a>
-    </div>
+      <div class="field">
+        <label for="source">How did you hear about Despatch?</label>
+        <select id="source" name="source">
+          <option value="" disabled selected>Select one</option>
+          <option>LinkedIn</option>
+          <option>Word of mouth</option>
+          <option>Google search</option>
+          <option>WhatsApp</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="trial-note">
+        <div class="trial-note-text"><strong>Launch pricing for the first 20 subscribers.</strong> Starting your trial now locks in your rate permanently. No card required — you'll hear from us within 24 hours.</div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">Start free trial</button>
+
+    </form>
+  </div>
+
+  <div class="success" id="success-view">
+    <div class="success-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✅</span></div>
+    <div class="success-title">You're on the list</div>
+    <div class="success-sub">Thanks for signing up. We'll be in touch within 24 hours to get your trial started.</div>
+    <a href="index.html" class="success-back">← Back to Despatch</a>
   </div>
 </div>
 
 <footer>
   <div class="footer-logo">Despatch</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:despatch.hq@gmail.com?subject=Unsubscribe">Unsubscribe</a>
+  </div>
   <div class="footer-copy">© 2026 Despatch</div>
 </footer>
 
@@ -178,9 +236,17 @@
     btn.disabled = true; btn.textContent = 'Submitting...';
     try {
       const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
-      if(res.ok) { document.getElementById('form-view').style.display='none'; document.getElementById('success-view').style.display='block'; }
-      else { btn.disabled=false; btn.textContent='Start free trial'; alert('Something went wrong. Please email despatch.hq@gmail.com directly.'); }
-    } catch(err) { btn.disabled=false; btn.textContent='Start free trial'; alert('Something went wrong. Please email despatch.hq@gmail.com directly.'); }
+      if(res.ok) {
+        document.getElementById('form-view').style.display = 'none';
+        document.getElementById('success-view').style.display = 'block';
+      } else {
+        btn.disabled = false; btn.textContent = 'Start free trial';
+        alert('Something went wrong. Please email despatch.hq@gmail.com directly.');
+      }
+    } catch(err) {
+      btn.disabled = false; btn.textContent = 'Start free trial';
+      alert('Something went wrong. Please email despatch.hq@gmail.com directly.');
+    }
   });
 </script>
 </body>
