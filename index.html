@@ -146,8 +146,9 @@
   .country-card:hover { background: var(--off); }
   .country-card.faded { opacity: 0.4; }
   .flag { font-size: 26px; display: block; margin-bottom: 10px; }
-  .country-name { font-size: 11px; color: #666666; margin-bottom: 10px; }
-  .country-count { font-family: var(--mono); font-size: 22px; color: var(--text); }
+  .country-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0; }
+  .country-count { display: none; }
+  .country-card.faded .country-count { display: block; font-size: 12px; color: var(--sub); margin-top: 4px; }
 
   /* HOW IT WORKS */
   .how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
@@ -394,12 +395,12 @@
 <section class="section fade-up">
   <div class="section-label">Countries covered</div>
   <div class="countries-grid">
-    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇸🇦</span><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
-    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇴🇲</span><div class="country-name">Oman</div><div class="country-count">754</div></div>
-    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇦🇪</span><div class="country-name">UAE</div><div class="country-count">122</div></div>
-    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">82</div></div>
-    <div class="country-card"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇰🇼</span><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
-    <div class="country-card faded"><span class="flag-emoji block" style="font-size:28px;margin-bottom:10px;">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:14px;color:var(--sub);">Coming soon</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇸🇦</span><div class="country-name">Saudi Arabia</div><div class="country-count">1,577</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇴🇲</span><div class="country-name">Oman</div><div class="country-count">754</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇦🇪</span><div class="country-name">UAE</div><div class="country-count">122</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇧🇭</span><div class="country-name">Bahrain</div><div class="country-count">82</div></div>
+    <div class="country-card"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇰🇼</span><div class="country-name">Kuwait</div><div class="country-count">50</div></div>
+    <div class="country-card faded"><span class="flag-emoji block" style="font-size:42px;margin-bottom:12px;">🇶🇦</span><div class="country-name">Qatar</div><div class="country-count" style="font-size:12px;color:var(--sub);">Coming soon</div></div>
   </div>
 </section>
 
