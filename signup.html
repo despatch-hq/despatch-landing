@@ -142,6 +142,24 @@
       </div>
 
       <div class="field">
+        <label for="position">Position</label>
+        <select id="position" name="position" onchange="document.getElementById('position-other-wrap').style.display=this.value==='Other'?'flex':'none'">
+          <option value="" disabled selected>Select your role</option>
+          <option>Business Owner / Director</option>
+          <option>Procurement Manager</option>
+          <option>Business Development</option>
+          <option>Contracts &amp; Tendering</option>
+          <option>Consultant / Advisor</option>
+          <option>Sales &amp; Partnerships</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field" id="position-other-wrap" style="display:none;">
+        <label for="position-other">Please specify</label>
+        <input type="text" id="position-other" name="position_other" placeholder="Your role or title">
+      </div>
+
+      <div class="field">
         <label for="email">Work email</label>
         <input type="email" id="email" name="email" placeholder="you@company.com" required>
       </div>
