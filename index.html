@@ -47,11 +47,11 @@
   }
   /* NAV */
   nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
-  .logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; }
+  .logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; text-decoration: none; }
   .nav-right { display: flex; align-items: center; gap: 24px; }
   .nav-link { font-size: 14px; color: #888888; padding: 8px 0; transition: color 0.2s; }
   .nav-link:hover { color: #ffffff; }
-  .nav-cta { font-size: 14px; color: #888888; border: 1px solid #2a2a2a; padding: 8px 20px; border-radius: 4px; transition: all 0.2s; }
+  .nav-cta { font-size: 14px; color: #888888; border: 1px solid #2a2a2a; padding: 8px 20px; border-radius: 4px; transition: all 0.2s; white-space: nowrap; text-decoration: none; }
   .nav-cta:hover { border-color: #555555; color: #ffffff; }
 
   /* HERO */
@@ -61,11 +61,11 @@
   h1 { font-size: clamp(42px, 5.5vw, 66px); font-weight: 300; line-height: 1.08; letter-spacing: -1.5px; color: var(--text); margin-bottom: 24px; }
   h1 em { font-style: normal; color: var(--sub); }
   .hero-hook { font-size: 20px; color: var(--text); line-height: 1.5; margin-bottom: 14px; font-weight: 400; }
-  .hero-sub { font-size: 16px; color: #555555; line-height: 1.7; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
+  .hero-sub { font-size: 16px; color: #444444; line-height: 1.75; max-width: 440px; margin-bottom: 40px; font-weight: 300; }
   .hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-  .btn-primary { display: inline-block; background: var(--black); color: #ffffff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 4px; transition: all 0.2s; }
+  .btn-primary { display: inline-block; background: var(--black); color: #ffffff; font-size: 16px; font-weight: 500; padding: 16px 40px; border-radius: 4px; transition: all 0.2s; }
   .btn-primary:hover { background: #222222; }
-  .btn-note { font-family: var(--mono); font-size: 11px; color: #aaaaaa; }
+  .btn-note { font-family: var(--mono); font-size: 13px; color: #888888; }
 
   /* DIGEST PREVIEW */
   .digest-preview { background: var(--off); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04); max-width: 540px; margin-left: auto; margin-right: 8px; }
@@ -122,7 +122,7 @@
 
   /* STATS GRID */
   .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--border-radius,8px);overflow:hidden;margin:52px 0;}
-  .stat-cell{background:var(--white);padding:36px 40px;}
+  .stat-cell{background:var(--off);padding:36px 40px;}
   .stat-num{font-family:var(--mono);font-size:40px;color:var(--text);margin-bottom:8px;letter-spacing:-1px;}
   .stat-label{font-family:var(--mono);font-size:11px;color:#777777;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
   .stat-sub{font-size:13px;color:#666666;line-height:1.6;}
@@ -131,7 +131,7 @@
 
   /* STATS GRID */
   .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 52px 0 0; }
-  .stat-cell { background: var(--white); padding: 36px 40px; }
+  .stat-cell { background: var(--off); padding: 36px 40px; }
   .stat-num { font-family: var(--mono); font-size: 40px; color: var(--text); margin-bottom: 8px; letter-spacing: -1px; }
   .stat-label { font-family: var(--mono); font-size: 11px; color: #777777; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
   .stat-sub { font-size: 13px; color: #666666; line-height: 1.6; }
@@ -142,7 +142,7 @@
 
   /* COUNTRIES */
   .countries-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .country-card { background: var(--white); padding: 32px 20px; text-align: center; transition: background 0.2s; }
+  .country-card { background: var(--off); padding: 32px 20px; text-align: center; transition: background 0.2s; }
   .country-card:hover { background: var(--off); }
   .country-card.faded { opacity: 0.4; }
   .flag { font-size: 26px; display: block; margin-bottom: 10px; }
@@ -151,10 +151,10 @@
 
   /* HOW IT WORKS */
   .how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .how-card { background: var(--white); padding: 28px 28px; }
+  .how-card { background: var(--off); padding: 28px 28px; }
   .how-num { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: 2px; margin-bottom: 16px; }
   .how-title { font-size: 19px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
-  .how-desc { font-size: 14px; color: #555555; line-height: 1.7; font-weight: 300; }
+  .how-desc { font-size: 14px; color: #444444; line-height: 1.75; font-weight: 300; }
 
   /* SAMPLE DIGEST */
   .sample-digest { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
@@ -200,7 +200,7 @@
   .early-access { background: var(--off); border: 1px solid var(--border); border-radius: 8px; padding: 40px 44px; display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
   .ea-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); border: 1px solid rgba(230,126,34,0.4); padding: 4px 12px; border-radius: 3px; margin-bottom: 14px; }
   .ea-title { font-size: 30px; font-weight: 300; color: var(--text); letter-spacing: -0.5px; margin-bottom: 10px; }
-  .ea-desc { font-size: 14px; color: #555555; line-height: 1.7; max-width: 460px; font-weight: 300; }
+  .ea-desc { font-size: 15px; color: #444444; line-height: 1.75; max-width: 460px; font-weight: 300; }
   .ea-action { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
   .ea-action .btn-primary { display: block; }
   .ea-note { font-family: var(--mono); font-size: 10px; color: #666666; text-align: center; width: 100%; display: block; }
@@ -559,33 +559,33 @@
 <section class="section fade-up" style="padding-top:40px;padding-bottom:40px;">
   <div class="section-label">Understanding your digest</div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
-    <div style="background:var(--white);padding:24px 22px;">
+    <div style="background:var(--off);padding:24px 22px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <div style="width:8px;height:8px;border-radius:50%;background:#27ae60;flex-shrink:0;animation:pulse 2s ease-in-out infinite;"></div>
         <div style="font-size:13px;font-weight:600;color:var(--text);">New</div>
       </div>
-      <div style="font-size:13px;color:#555555;line-height:1.6;">Tenders appearing for the first time today. Always shown first so you never miss a fresh opportunity.</div>
+      <div style="font-size:13px;color:#444444;line-height:1.7;">Tenders appearing for the first time today. Always shown first so you never miss a fresh opportunity.</div>
     </div>
-    <div style="background:var(--white);padding:24px 22px;">
+    <div style="background:var(--off);padding:24px 22px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <div style="width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;"></div>
         <div style="font-size:13px;font-weight:600;color:var(--text);">Critical</div>
       </div>
-      <div style="font-size:13px;color:#555555;line-height:1.6;">Closes within 3 days. Act immediately — these require urgent attention and fast submission decisions.</div>
+      <div style="font-size:13px;color:#444444;line-height:1.7;">Closes within 3 days. Act immediately — these require urgent attention and fast submission decisions.</div>
     </div>
-    <div style="background:var(--white);padding:24px 22px;">
+    <div style="background:var(--off);padding:24px 22px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <div style="width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;"></div>
         <div style="font-size:13px;font-weight:600;color:var(--text);">Urgent</div>
       </div>
-      <div style="font-size:13px;color:#555555;line-height:1.6;">Closes within 7 days. Plan your submission this week — still time to act but the window is closing.</div>
+      <div style="font-size:13px;color:#444444;line-height:1.7;">Closes within 7 days. Plan your submission this week — still time to act but the window is closing.</div>
     </div>
-    <div style="background:var(--white);padding:24px 22px;">
+    <div style="background:var(--off);padding:24px 22px;">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
         <div style="width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;"></div>
         <div style="font-size:13px;font-weight:600;color:var(--text);">Normal</div>
       </div>
-      <div style="font-size:13px;color:#555555;line-height:1.6;">Active tenders with more than 7 days remaining. Monitor these and plan ahead for upcoming deadlines.</div>
+      <div style="font-size:13px;color:#444444;line-height:1.7;">Active tenders with more than 7 days remaining. Monitor these and plan ahead for upcoming deadlines.</div>
     </div>
   </div>
 </section>
