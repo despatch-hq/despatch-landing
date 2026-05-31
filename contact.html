@@ -15,7 +15,7 @@
     --mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;
   }
 
-  /* NAV */
+  /* NAV — identical to about.html */
   nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
   .logo { font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #ffffff; text-decoration: none; }
   .nav-right { display: flex; align-items: center; gap: 24px; }
@@ -23,63 +23,69 @@
   .nav-link:hover, .nav-link.active { color: #ffffff; }
   .nav-cta { font-size: 14px; color: #888888; border: 1px solid #2a2a2a; padding: 8px 20px; border-radius: 4px; transition: all 0.2s; white-space: nowrap; text-decoration: none; }
   .nav-cta:hover { border-color: #555555; color: #ffffff; }
-  body { background:var(--white);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column; }
-  a { text-decoration:none;color:inherit; }
 
-  /* Force emoji rendering on all devices including Windows */
-  .emoji, [data-emoji] {
-    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
-  }
-  .nav-link:hover, .nav-link.active { color: #ffffff; }
-  .nav-cta:hover { border-color: #555555; color: #ffffff; }
-  .main { flex:1;background:var(--off);display:flex;align-items:center;justify-content:center;padding: 140px 40px 64px; }
-  .card { width:100%;max-width:760px; }
-  .card-eyebrow { font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--dim);margin-bottom:16px; }
-  .card-title { font-size:32px;font-weight:300;color:var(--text);letter-spacing:-0.8px;line-height:1.15;margin-bottom:32px; }
-  .card-sub { font-size:15px;color:#444444;line-height:1.75;margin-bottom:28px;font-weight:300; }
-  .contact-options { display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px; }
-  .contact-card { background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px; }
-  .contact-card-icon { font-size:20px;margin-bottom:10px; }
-  .contact-card-title { font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px; }
-  .contact-card-desc { font-size:13px;color:#444444;line-height:1.7;margin-bottom:14px; }
-  .contact-card-link { font-family:var(--mono);font-size:12px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:2px;transition:border-color 0.2s; }
-  .contact-card-link:hover { border-color:var(--text); }
-  .form-card { background:var(--white);border:1px solid var(--border);border-radius:8px;padding:32px; }
-  .form-title { font-size:17px;font-weight:500;color:var(--text);margin-bottom:20px; }
-  .form { display:flex;flex-direction:column;gap:14px; }
-  .field { display:flex;flex-direction:column;gap:6px; }
-  .field-row { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
-  label { font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#888888; }
-  input,select,textarea { background:var(--off);border:1px solid var(--border);border-radius:4px;padding:11px 14px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;transition:border-color 0.2s;width:100%; }
-  input:focus,select:focus,textarea:focus { border-color:var(--text);background:var(--white); }
-  textarea { resize:vertical;min-height:100px; }
-  select { -webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;background-color:var(--off); }
-  .btn-submit { background:var(--black);color:#ffffff;font-size:14px;font-weight:500;padding:13px 32px;border-radius:4px;border:none;cursor:pointer;width:100%;margin-top:4px;transition:background 0.2s; }
-  .btn-submit:hover { background:#222222; }
-  .success { display:none;text-align:center;padding:32px; }
-  .success-icon { font-size:32px;margin-bottom:14px; }
-  .success-title { font-size:20px;font-weight:300;color:var(--text);margin-bottom:8px; }
-  .success-sub { font-size:14px;color:var(--sub);line-height:1.6; }
-  footer { background:var(--black);padding:28px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px; }
-  .footer-logo { font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#888888; }
-  .footer-links { display:flex;gap:24px; }
-  .footer-links a { font-size:12px;color:#888888;transition:color 0.2s; }
-  .footer-links a:hover { color:#bbbbbb; }
-  .footer-copy { font-family:var(--mono);font-size:11px;color:#666666; }
+  /* BODY — identical to about.html */
+  body { background: var(--white); color: var(--text); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { text-decoration: none; color: inherit; }
 
+  /* PAGE — byte-for-byte identical to about.html */
+  .page { max-width: 760px; margin: 0 auto; padding: 140px 40px 60px; }
+  .page-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--dim); margin-bottom: 16px; margin-top: 8px; }
+  .page-title { font-size: clamp(30px,3.5vw,42px); font-weight: 300; color: var(--text); letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 32px; }
+  .page-sub { font-size: 16px; color: #444444; line-height: 1.75; font-weight: 300; margin-bottom: 36px; }
+  .divider { height: 1px; background: var(--border); margin: 40px 0; }
+
+  /* CONTACT CARDS */
+  .contact-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+  .contact-card { background: var(--off); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  .contact-card-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+  .contact-card-desc { font-size: 13px; color: #444444; line-height: 1.7; margin-bottom: 14px; }
+  .contact-card-link { font-family: var(--mono); font-size: 12px; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: border-color 0.2s; }
+  .contact-card-link:hover { border-color: var(--text); }
+
+  /* FORM */
+  .form-card { background: var(--off); border: 1px solid var(--border); border-radius: 8px; padding: 32px; }
+  .form-title { font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 24px; }
+  .form { display: flex; flex-direction: column; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #888888; }
+  input, select, textarea { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 11px 14px; font-family: var(--sans); font-size: 14px; color: var(--text); outline: none; transition: border-color 0.2s; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--text); background: var(--white); }
+  textarea { resize: vertical; min-height: 100px; }
+  select { -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; background-color: var(--white); }
+  .btn-submit { background: var(--black); color: #ffffff; font-size: 14px; font-weight: 500; padding: 13px 32px; border-radius: 4px; border: none; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.2s; font-family: var(--sans); }
+  .btn-submit:hover { background: #222222; }
+
+  /* SUCCESS */
+  .success { display: none; text-align: center; padding: 32px; }
+  .success-icon { font-size: 32px; margin-bottom: 14px; }
+  .success-title { font-size: 20px; font-weight: 300; color: var(--text); margin-bottom: 8px; }
+  .success-sub { font-size: 14px; color: var(--sub); line-height: 1.6; }
+
+  /* FOOTER — identical to about.html */
+  footer { background: var(--black); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: var(--mono); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #888888; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 12px; color: #888888; transition: color 0.2s; }
+  .footer-links a:hover { color: #bbbbbb; }
+  .footer-copy { font-family: var(--mono); font-size: 11px; color: #666666; }
+
+  /* MOBILE — identical breakpoints to about.html */
   @media(max-width:900px) {
     nav { padding: 14px 16px; }
     .nav-link { font-size: 12px; padding: 6px 0; }
     .nav-cta { font-size: 12px; padding: 6px 14px; white-space: nowrap; }
-    .main { padding-top: 120px; }
+    .page { padding: 120px 28px 60px; }
     .contact-options { grid-template-columns: 1fr; }
     .field-row { grid-template-columns: 1fr; }
     footer { padding: 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
   }
   @media(max-width:600px) {
     .nav-right { gap: 24px; }
-    .main { padding: 120px 20px 56px; }
-  }</style>
+    .page { padding: 100px 20px 60px; }
+  }
+</style>
 </head>
 <body>
 
@@ -92,66 +98,67 @@
   </div>
 </nav>
 
-<div class="main">
-  <div class="card">
-    <div class="card-eyebrow">Get in touch</div>
-    <div class="card-title">Contact Despatch</div>
-    <div class="card-sub">Questions about your subscription, coverage, or the product? We respond to every message within 24 hours.</div>
+<div class="page">
 
-    <div class="contact-options">
-      <div class="contact-card">
-        <div class="contact-card-title">Email us directly</div>
-        <div class="contact-card-desc">For subscription questions, trial requests, or general enquiries.</div>
-        <a href="mailto:despatch.hq@gmail.com" class="contact-card-link">despatch.hq@gmail.com</a>
-      </div>
-      <div class="contact-card">
-        <div class="contact-card-title">Start a free trial</div>
-        <div class="contact-card-desc">1 month free, full access, no card required. Get started in minutes.</div>
-        <a href="signup.html" class="contact-card-link">Sign up now →</a>
-      </div>
+  <div class="page-eyebrow">Get in touch</div>
+  <div class="page-title">Contact Despatch</div>
+  <p class="page-sub">Questions about your subscription, coverage, or the product? We respond to every message within 24 hours.</p>
+
+  <div class="contact-options">
+    <div class="contact-card">
+      <div class="contact-card-title">Email us directly</div>
+      <div class="contact-card-desc">For subscription questions, trial requests, or general enquiries.</div>
+      <a href="mailto:despatch.hq@gmail.com" class="contact-card-link">despatch.hq@gmail.com</a>
     </div>
-
-    <div class="form-card">
-      <div class="form-title">Send us a message</div>
-      <div id="form-view">
-        <form class="form" id="contact-form" action="https://formspree.io/f/mojbdqry" method="POST">
-          <div class="field-row">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
-              <option value="" disabled selected>What's this about?</option>
-              <option>Subscription enquiry</option>
-              <option>Trial request</option>
-              <option>Coverage question</option>
-              <option>Pricing</option>
-              <option>Partnership</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your message..." required></textarea>
-          </div>
-          <input type="hidden" name="_subject" value="Despatch Contact Form">
-          <button type="submit" class="btn-submit" id="submit-btn">Send message</button>
-        </form>
-      </div>
-      <div class="success" id="success-view">
-        <div class="success-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✅</span></div>
-        <div class="success-title">Message received</div>
-        <div class="success-sub">Thanks for reaching out. We'll get back to you within 24 hours.</div>
-      </div>
+    <div class="contact-card">
+      <div class="contact-card-title">Start a free trial</div>
+      <div class="contact-card-desc">1 month free, full access, no card required. Get started in minutes.</div>
+      <a href="signup.html" class="contact-card-link">Sign up now →</a>
     </div>
   </div>
+
+  <div class="form-card">
+    <div class="form-title">Send us a message</div>
+    <div id="form-view">
+      <form class="form" id="contact-form" action="https://formspree.io/f/mojbdqry" method="POST">
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="" disabled selected>What's this about?</option>
+            <option>Subscription enquiry</option>
+            <option>Trial request</option>
+            <option>Coverage question</option>
+            <option>Pricing</option>
+            <option>Partnership</option>
+            <option>Feedback</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Despatch Contact Form">
+        <button type="submit" class="btn-submit" id="submit-btn">Send message</button>
+      </form>
+    </div>
+    <div class="success" id="success-view">
+      <div class="success-icon"><span style="font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;">✅</span></div>
+      <div class="success-title">Message received</div>
+      <div class="success-sub">Thanks for reaching out. We'll get back to you within 24 hours.</div>
+    </div>
+  </div>
+
 </div>
 
 <footer>
